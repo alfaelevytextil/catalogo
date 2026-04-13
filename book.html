@@ -31,13 +31,13 @@
 .pg-cover-btn--ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;}
 @media(max-width:700px){.pg-cover-social{display:flex;}}
 .pg-intro-wash{margin-top:22px;text-align:center;}
-.pg-intro-wash-title{font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(200,160,58,.65);margin-bottom:12px;}
-.pg-intro-wash-icons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.pg-intro-wash-item{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:42px;}
+.pg-intro-wash-title{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(200,160,58,.75);margin-bottom:16px;}
+.pg-intro-wash-icons{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.pg-intro-wash-item{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:52px;}
 /* Ícones de lavagem maiores */
-.pg-intro-wash-icon{width:62px;height:62px;border:1.5px solid rgba(63,45,83,.3);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(63,45,83,.7);}
-.pg-intro-wash-icon img{width:46px;height:46px;object-fit:contain;}
-.pg-intro-wash-item span{font-size:7px;letter-spacing:.5px;color:rgba(63,45,83,.55);text-align:center;line-height:1.3;max-width:64px;}
+.pg-intro-wash-icon{width:72px;height:72px;border:1.5px solid rgba(63,45,83,.3);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(63,45,83,.7);}
+.pg-intro-wash-icon img{width:54px;height:54px;object-fit:contain;}
+.pg-intro-wash-item span{font-size:8px;letter-spacing:.5px;color:rgba(63,45,83,.65);text-align:center;line-height:1.3;max-width:74px;}
 /* ── Books Dropbox dropdown ── */
 .bl-dropbox-wrap{position:relative;display:inline-flex;flex-direction:column;align-items:center;margin-top:24px;}
 .bl-dropbox-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;background:rgba(200,160,58,.08);border:1px solid rgba(200,160,58,.35);color:var(--gold-lt);cursor:pointer;transition:all .3s;}
@@ -318,7 +318,7 @@ const BOOK_DATA = {
   JACQUARD_GITA:          { name:'Jacquard Gita',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   JACQUARD_KASHIMIR:      { name:'Jacquard Kashimir',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   JACQUARD_LEAF:          { name:'Jacquard Leaf',          category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
-  JACQUARD_LINES:         { name:'Jacquard Lines',         category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
+  JACQUARD_LINES:         { name:'Jacquard Lines',         category:'TEXTURIZADOS', tag:'Fitness',                         bookPages:2 },
   JACQUARD_NILO:          { name:'Jacquard Nilo',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
   JACQUARD_ONCA:          { name:'Jacquard Onça',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   JACQUARD_PIQUET:        { name:'Jacquard Piquet',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
@@ -389,7 +389,11 @@ const WASH_DATA = {
   BOUCLE_PETALAS:         [...WASH_DEFAULT],
   CANCUN:                 [...WASH_DEFAULT],
   CANELADO_BLACKOUT:      [...WASH_DEFAULT],
-  CANELADO_DE_COMPRESSAO: [...WASH_DEFAULT],
+  CANELADO_DE_COMPRESSAO: [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
   CANELADO_DIAGONAL:      [...WASH_DEFAULT],
   CANELADO_EDEN:          [...WASH_DEFAULT],
   CANELADO_FUJI:          [...WASH_DEFAULT],
@@ -442,7 +446,11 @@ const WASH_DATA = {
   SEREIA:                 [...WASH_DEFAULT],
   SUKUZA:                 [...WASH_DEFAULT],
   TEXAS:                  [...WASH_DEFAULT],
-  VERONA:                 [...WASH_DEFAULT],
+  VERONA:                 [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
   SARDINHA:               [...WASH_DEFAULT],
   SARDINHAS:              [...WASH_DEFAULT],
 };
@@ -529,7 +537,7 @@ function renderIntro(page){
       <a href="https://wa.me/5511957717470?text=Ol%C3%A1!%20Interesse%20no%20tecido%20${fabricNameEnc}." target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--wpp" title="Pedir Amostra via WhatsApp">
         <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
       </a>
-      <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==notepad .gitignore" target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--ig pg-intro-icon-btn--levy" title="Instagram @levytextil456">
+      <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--ig pg-intro-icon-btn--levy" title="Instagram @levytextil456">
         <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-instagram"/></svg>
       </a>
       <a href="https://www.instagram.com/alfatextil/" target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--ig pg-intro-icon-btn--alfa" title="Instagram @alfatextil">
