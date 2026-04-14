@@ -67,6 +67,7 @@
 .br-ig-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-size:9px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:opacity .3s;white-space:nowrap;font-family:'Jost',sans-serif;}
 .br-ig-btn:hover{opacity:.85;}
 @media(max-width:900px){.br-ig-btn span{display:none;}.br-ig-btn{padding:7px 10px;}}
+#btnReturnCatalog:hover{border-color:var(--gold,#c8a03a);color:#fff;background:rgba(200,160,58,.15);}
 </style>
 </head>
 <body>
@@ -245,6 +246,11 @@
   </div>
 </section>
 
+
+<!-- Botão X — visível só quando acessado via ?fabric= do catálogo -->
+<button id="btnReturnCatalog" onclick="returnToCatalog()" title="Fechar e voltar ao tecido" style="display:none;position:fixed;top:10px;right:16px;z-index:9999;background:rgba(14,8,24,.92);border:1px solid rgba(200,160,58,.35);color:rgba(255,255,255,.75);width:36px;height:36px;cursor:pointer;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(6px);">
+  <svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+</button>
 
 <!-- MENU DE TECIDOS -->
 <div class="fm-overlay" id="fmOverlay" onclick="closeFabricMenu()"></div>
@@ -575,6 +581,9 @@ function openBook(category,jumpToFabric){
   if(jumpToFabric){for(let i=0;i<mobilePages.length;i++){if(mobilePages[i].key===jumpToFabric){mobilePage=i;break;}}}
   document.getElementById('landing').style.display='none';
   document.getElementById('reader').style.display='flex';
+  /* Mostrar botão X se veio do catálogo */
+  const xBtn=document.getElementById('btnReturnCatalog');
+  if(xBtn&&_returnFabricKey)xBtn.style.display='flex';
   document.getElementById('brHeaderCat').textContent=CAT_LABELS[category]||category;
   document.getElementById('fmCatLabel').textContent=CAT_LABELS[category]||category;
   document.getElementById('brWpp').href=`https://wa.me/5511957717470?text=Olá!%20Vi%20o%20lookbook%20de%20${encodeURIComponent(CAT_LABELS[category]||category)}%20e%20gostaria%20de%20mais%20informações.`;
@@ -586,6 +595,8 @@ function openBook(category,jumpToFabric){
 function closeBook(){
   document.getElementById('reader').style.display='none';
   document.getElementById('landing').style.display='flex';
+  const btn=document.getElementById('btnReturnCatalog');
+  if(btn)btn.style.display='none';
   isAnimating=false; document.getElementById('brFlipper').style.display='none';
   closeFabricMenu(); closeZoom();
 }
@@ -827,10 +838,23 @@ window.addEventListener('resize',()=>{
   },200);
 });
 
+/* ── RETORNO AO CATÁLOGO (botão X) ── */
+let _returnFabricKey = null;
+function returnToCatalog(){
+  if(_returnFabricKey) window.location.href = 'index.html?fabric=' + encodeURIComponent(_returnFabricKey);
+  else window.location.href = 'index.html';
+}
+
 /* ── URL PARAMS ── */
 window.addEventListener('DOMContentLoaded',()=>{
   const params=new URLSearchParams(location.search);
   const cat=params.get('category'),fabric=params.get('fabric');
+  /* Mostrar botão X somente quando veio via ?fabric= do catálogo */
+  if(fabric){
+    _returnFabricKey = fabric;
+    const btn = document.getElementById('btnReturnCatalog');
+    if(btn){ btn.style.display='flex'; }
+  }
   if(cat)openBook(cat,fabric||null);
 
   // Close dropbox menu when clicking outside

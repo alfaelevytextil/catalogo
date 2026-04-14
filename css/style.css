@@ -306,7 +306,7 @@ footer ul li a:hover{color:var(--cream);}
   padding-top: 10px;
 }
 
-.fabric-modal-cover{position:relative;overflow:hidden;aspect-ratio:3/4;background:#2a1a0e;}
+.fabric-modal-cover{position:relative;overflow:hidden;aspect-ratio:3/4;background:#2a1a0e;margin-top:15px;}
 .fabric-modal-cover img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border:1px solid rgba(139,69,200,0.2);}
 
 
@@ -336,17 +336,18 @@ footer ul li a:hover{color:var(--cream);}
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 10px;
-  padding: 16px 32px;
+  padding: 12px 20px;
   background: #25D366;
   color: #fff;
-  font-size: 10px;
-  letter-spacing: 4px;
+  font-size: 9px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
   align-self: center;
   transition: background 0.3s;
+  flex: 1;
 }
 
 .fabric-modal-wpp:hover{background:#1ebe5a;}
@@ -640,18 +641,19 @@ footer a {
   display: none; /* mostrado via JS quando bookUrl existe */
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 10px;
-  padding: 14px 32px;
+  padding: 12px 20px;
   background: transparent;
   color: var(--deep);
   border: 1px solid rgba(14,8,24,0.3);
-  font-size: 10px;
-  letter-spacing: 4px;
+  font-size: 9px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
   align-self: center;
   transition: all 0.3s;
+  flex: 1;
 }
 .fabric-modal-book:hover {
   background: var(--deep);
@@ -659,6 +661,31 @@ footer a {
   border-color: var(--deep);
 }
 .fabric-modal-book svg { flex-shrink: 0; }
+
+/* ── Container dos botões do modal ── */
+.fabric-modal-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: stretch;
+}
+.fabric-modal-actions .fabric-modal-wpp,
+.fabric-modal-actions .fabric-modal-book {
+  margin-top: 0;
+  flex: 1;
+}
+@media(max-width:900px){
+  .fabric-modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .fabric-modal-actions .fabric-modal-wpp,
+  .fabric-modal-actions .fabric-modal-book {
+    width: 100%;
+    flex: unset;
+  }
+}
 /* ══════════════════════════════════════════════════
    VER BOOK BUTTON (hero)
 ══════════════════════════════════════════════════ */
@@ -770,4 +797,86 @@ footer a {
 @media(max-width:600px){
   .filter-bar-inner{gap:10px;}
   .filter-bar-label{display:none;}
+}
+/* ══════════════════════════════════════════
+   MODAL — DESCRIÇÃO FORMATADA
+══════════════════════════════════════════ */
+.fabric-modal-desc {
+  font-size: 14px !important;
+  line-height: 1.75 !important;
+  font-weight: 400;
+  color: rgba(20, 8, 40, 0.65) !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px;
+}
+.fabric-modal-desc p {
+  margin-bottom: 10px;
+}
+.fabric-modal-desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* ══════════════════════════════════════════
+   MODAL — LARGURA (nova linha nas specs)
+══════════════════════════════════════════ */
+/* largura já usa .spec-line, nothing extra needed */
+
+/* ══════════════════════════════════════════
+   MODAL — INDICADO PARA / ATRIBUTOS
+══════════════════════════════════════════ */
+.attr-section {
+  margin-top: 16px;
+}
+.attr-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+.attr-section-title {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--deep);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(14,8,24,0.1);
+}
+.catalog-attributes--uso,
+.catalog-attributes--attr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.attr-icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: none;
+}
+.attr-icon-wrap img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.attr-icon-wrap span {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(14,8,24,0.6);
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 500;
+}
+@media(max-width:600px){
+  .attr-columns {
+    grid-template-columns: 1fr;
+  }
+  .attr-icon-wrap img { width: 48px; height: 48px; }
+  .attr-icon-wrap span { font-size: 9px; }
+  .catalog-attributes--uso, .catalog-attributes--attr { gap: 8px 4px; }
 }
