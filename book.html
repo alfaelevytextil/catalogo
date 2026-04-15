@@ -291,6 +291,10 @@
 
 <script>
 const BOOK_DATA = {
+  // -- COLEÇÃO LISOS --
+  LIRUS:                  { name:'Lirus',                  category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
+  NEW_TRIP:               { name:'New Trip',               category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
+  // -- COLEÇÃO TEXTURIZADOS --
   ANARRUGA_BRILHANTE:     { name:'Anarruga Brilhante',     category:'TEXTURIZADOS', tag:'Moda Praia · Lingerie',           bookPages:2},
   ANARRUGA_PRAIA:         { name:'Anarruga Praia',         category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
   AREZZO:                 { name:'Arezzo',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
@@ -353,6 +357,7 @@ const BOOK_DATA = {
   SUKUZA:                 { name:'Sukuza',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   TEXAS:                  { name:'Texas',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   VERONA:                 { name:'Verona',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
+  // -- COLEÇÃO ESTAMPADOS --
   SARDINHA:               { name:'Sardinha',               category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:2 },
   SARDINHAS:              { name:'Sardinhas',              category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:2 },
 };
@@ -387,6 +392,14 @@ const WASH_DEFAULT = [
    NAO-SECAR-SECADORA.jpg · NAO-PASSAR.jpg · SECAR-VARAL.jpg
    ══════════════════════════════════════════════════════════ */
 const WASH_DATA = {
+  // -- TECIDOS LISOS --
+  LIRUS:                  [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR NA HORIZONTAL'}],
+  NEW_TRIP:               [...WASH_DEFAULT],
+// -- TECIDOS TEXTURIZADOS --
   ANARRUGA_BRILHANTE:     [...WASH_DEFAULT],
   ANARRUGA_PRAIA:         [...WASH_DEFAULT],
   AREZZO:                 [...WASH_DEFAULT],
@@ -457,6 +470,7 @@ const WASH_DATA = {
                              {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
                              {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
                              {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
+                             // -- TECIDOS ESTAMPADOS --
   SARDINHA:               [...WASH_DEFAULT],
   SARDINHAS:              [...WASH_DEFAULT],
 };
@@ -841,8 +855,10 @@ window.addEventListener('resize',()=>{
 /* ── RETORNO AO CATÁLOGO (botão X) ── */
 let _returnFabricKey = null;
 function returnToCatalog(){
-  if(_returnFabricKey) window.location.href = 'index.html?fabric=' + encodeURIComponent(_returnFabricKey);
-  else window.location.href = 'index.html';
+  const v = sessionStorage.getItem('vendedor');
+  const vParam = v ? '&vendedor=' + encodeURIComponent(v) : '';
+  if(_returnFabricKey) window.location.href = 'index.html?fabric=' + encodeURIComponent(_returnFabricKey) + vParam;
+  else window.location.href = 'index.html' + (v ? '?vendedor=' + encodeURIComponent(v) : '');
 }
 
 /* ── URL PARAMS ── */
@@ -861,6 +877,9 @@ window.addEventListener('DOMContentLoaded',()=>{
   document.addEventListener('click', e => {
     if (!e.target.closest('#blDropboxWrap')) closeDropboxMenu();
   });
+
+  // ── SISTEMA DE VENDEDORES ──
+  initVendedor();
 });
 
 function toggleDropboxMenu(){
@@ -873,6 +892,73 @@ function closeDropboxMenu(){
   document.getElementById('blDropboxMenu')?.classList.remove('open');
   document.getElementById('blDropboxBtn')?.classList.remove('open');
 }
+
+/* ══════════════════════════════════════════════════════════════
+   SISTEMA DE VENDEDORES — edite apenas este bloco
+   ══════════════════════════════════════════════════════════════
+   Para adicionar/editar vendedores, altere o objeto VENDEDORES.
+   A chave é o que aparece na URL: ?vendedor=CHAVE
+   Para links curtos use o arquivo de redirecionamento: CHAVE.html
+   ══════════════════════════════════════════════════════════════ */
+const VENDEDORES = {
+  vinicius:  { nome: 'Vinicius',  tel: '5511919050956' }, // troque pelo número real
+  mikael: { nome: 'Mikael', tel: '5511934527816' }, // troque pelo número real
+  ricardo:   { nome: 'Ricardo',   tel: '5511949492913' }, // troque pelo número real
+};
+const WPP_DEFAULT_TEL  = '5511957717470';
+const WPP_DEFAULT_NOME = 'Lucas Cardillo';
+
+function initVendedor() {
+  // 1. Lê o param da URL
+  const params = new URLSearchParams(location.search);
+  const keyURL = (params.get('vendedor') || '').toLowerCase().trim();
+
+  // 2. Persiste no sessionStorage (mantém ao navegar entre páginas)
+  if (keyURL) sessionStorage.setItem('vendedor', keyURL);
+  const key = keyURL || (sessionStorage.getItem('vendedor') || '').toLowerCase().trim();
+
+  // 3. Resolve vendedor
+  const v = VENDEDORES[key] || { nome: WPP_DEFAULT_NOME, tel: WPP_DEFAULT_TEL };
+
+  // 4. Mensagem padrão
+  const msg = v.nome
+    ? `Olá%20${encodeURIComponent(v.nome)}!%20Vi%20o%20catálogo%20da%20Alfa%20%26%20Levy%20e%20gostaria%20de%20saber%20mais.`
+    : `Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos.`;
+
+  // 5. Atualiza todos os links wa.me da página
+  document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+    a.href = `https://wa.me/${v.tel}?text=${msg}`;
+  });
+
+  // 6. Atualiza botão flutuante
+  const floatBtn = document.getElementById('wppFloat');
+  if (floatBtn) floatBtn.href = `https://wa.me/${v.tel}?text=${msg}`;
+
+  // 7. Propaga ?vendedor= nos links internos (index.html)
+  if (key) {
+    document.querySelectorAll('a[href*="index.html"]').forEach(a => {
+      try {
+        const u = new URL(a.href, location.href);
+        u.searchParams.set('vendedor', key);
+        a.href = u.toString();
+      } catch(e){}
+    });
+  }
+}
 </script>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<style>
+.wpp-float{position:fixed;bottom:28px;right:24px;z-index:9999;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;padding:13px 20px 13px 16px;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:all .3s;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+.wpp-float svg{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
+.wpp-float-label{white-space:nowrap;}
+.wpp-float:hover{background:#1ebe5a;box-shadow:0 6px 28px rgba(37,211,102,.6);transform:translateY(-2px);}
+@media(max-width:500px){.wpp-float-label{display:none;}.wpp-float{padding:14px;border-radius:50%;}}
+</style>
+<a id="wppFloat" href="https://wa.me/5511957717470?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos." target="_blank" class="wpp-float" title="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wpp-float-label">Fale Conosco</span>
+</a>
+
 </body>
 </html>

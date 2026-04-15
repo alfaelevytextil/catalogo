@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Redirecionando...</title>
+<script>
+// Redireciona para o site com o vendedor já identificado
+// Link curto: seusite.com/joao.html → index.html?vendedor=joao
+sessionStorage.setItem('vendedor', 'vinicius');
+location.replace('index.html?vendedor=vinicius');
+</script>
+</head>
+<body></body>
+</html>
