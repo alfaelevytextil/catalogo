@@ -112,6 +112,12 @@
         <div class="bl-card-sub">Cores sólidas · acabamento uniforme</div>
         <div class="bl-card-arrow"><svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg></div>
       </button>
+      <button class="bl-card" onclick="openBook('TRAMAS')">
+        <div class="bl-card-top"><span class="bl-card-badge">Coleção</span></div>
+        <div class="bl-card-name">Tramas Abertas</div>
+        <div class="bl-card-sub">Texturas artesanais · nós e vazados</div>
+        <div class="bl-card-arrow"><svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg></div>
+      </button>
       <button class="bl-card bl-card--featured" onclick="openBook('TEXTURIZADOS')">
         <div class="bl-card-top"><span class="bl-card-badge">Coleção</span><span class="bl-card-badge-main">Destaque</span></div>
         <div class="bl-card-name">Texturizados</div>
@@ -294,6 +300,9 @@ const BOOK_DATA = {
   // -- COLEÇÃO LISOS --
   LIRUS:                  { name:'Lirus',                  category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
   NEW_TRIP:               { name:'New Trip',               category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
+  // -- COLEÇÃO TRAMAS --
+  MACRAME:                { name:'Macramê',                category:'TRAMAS',       tag:'Moda Praia · Moda',               bookPages:2 },
+  MACRAME_PALMER:         { name:'Macramê Franja Palmer',  category:'TRAMAS',       tag:'Moda Praia · Moda Casual',        bookPages:2 },
   // -- COLEÇÃO TEXTURIZADOS --
   ANARRUGA_BRILHANTE:     { name:'Anarruga Brilhante',     category:'TEXTURIZADOS', tag:'Moda Praia · Lingerie',           bookPages:2},
   ANARRUGA_PRAIA:         { name:'Anarruga Praia',         category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
@@ -319,6 +328,7 @@ const BOOK_DATA = {
   CROCHE_SANTORINI:       { name:'Crochê Santorini',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   CROCHETE:               { name:'Crochete',               category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:2 },
   CRUNCH_LISTRADO:        { name:'Crunch Listrado',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
+  CRUNCH_POA:             { name:'Crunch Poá',             category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
   DIAMOND:                { name:'Diamond',                category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
   DOTS:                   { name:'Dots',                   category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
   JACQUARD_BROCADO:       { name:'Jacquard Brocado',       category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:2 },
@@ -343,7 +353,6 @@ const BOOK_DATA = {
   LUREX_4_E_OUTROS:       { name:'Lurex 4 e Outros',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   LUX_DUBAI:              { name:'Lux Dubai',              category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   LYCRA_JEANS:            { name:'Lycra Jeans',            category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  MACRAME:                { name:'Macramê',                category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
   MALIBU:                 { name:'Malibu',                 category:'TEXTURIZADOS', tag:'Fitness · Moda Casual · Praia',   bookPages:2 },
   MALTE:                  { name:'Malte',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
   MARRAKESH:              { name:'Marrakesh',              category:'TEXTURIZADOS', tag:'Fitness · Lingerie · Praia',      bookPages:2 },
@@ -380,6 +389,7 @@ const WASH_DEFAULT = [
   {img:'images/lavagem/MAX-40.jpg',  label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
   {img:'images/lavagem/SECAR-MIN.jpg',  label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
   {img:'images/lavagem/UMIDO.jpg',  label:'LIMPEZA A ÚMIDO'},
+  {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',  label:'NÃO LIMPAR A ÚMIDO'},
 ];
 /* ══════════════════════════════════════════════════════════
    COMO PERSONALIZAR POR TECIDO:
@@ -407,6 +417,15 @@ const WASH_DATA = {
                              {img:'images/lavagem/SECAR-MIN.jpg',label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
                              {img:'images/lavagem/SECAR-VARAL.jpg',   label:'SECAR EM VARAL, À SOMBRA'},
                              {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/NAO-LAVAR-SECO.jpg',  label:'NÃO LAVAR A SECO'}, {img:'images/lavagem/UMIDO.jpg',  label:'LIMPEZA A ÚMIDO'}],
+  // -- TECIDOS TRAMADOS --
+    MACRAME:                [...WASH_DEFAULT],
+  MACRAME_PALMER:         [{img:'images/lavagem/MAX-40.jpg', label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/PASSAR-MAX-100.jpg',  label:'PASSAR EM TEMPERATURA MÁX. 100°C'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}, {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',  label:'NÃO LIMPAR A ÚMIDO'}],
+
+
 // -- TECIDOS TEXTURIZADOS --
   ANARRUGA_BRILHANTE:     [...WASH_DEFAULT],
   ANARRUGA_PRAIA:         [...WASH_DEFAULT],
@@ -429,7 +448,11 @@ const WASH_DATA = {
                              {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
                              {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
   CANELADO_LENATEX:       [...WASH_DEFAULT],
-  CANELADO_PILLE:         [...WASH_DEFAULT],
+  CANELADO_PILLE:         [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
   CANELADO_POLIESTER:     [...WASH_DEFAULT],
   CANELADO_POWER:         [...WASH_DEFAULT],
   CANELADO_TREND_MOVE:    [{img:'images/lavagem/MAX-30-1.jpg', label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
@@ -448,6 +471,11 @@ const WASH_DATA = {
                              {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
                              {img:'images/lavagem/PASSAR-MAX-100.jpg',  label:'PASSAR EM TEMPERATURA MÁX. 110°C'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
   CRUNCH_LISTRADO:        [...WASH_DEFAULT],
+  CRUNCH_POA:             [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
+                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
+                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
+                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
   DIAMOND:                [...WASH_DEFAULT],
   DOTS:                   [...WASH_DEFAULT],
   JACQUARD_BROCADO:       [...WASH_DEFAULT],
@@ -472,7 +500,6 @@ const WASH_DATA = {
   LUREX_4_E_OUTROS:       [...WASH_DEFAULT],
   LUX_DUBAI:              [...WASH_DEFAULT],
   LYCRA_JEANS:            [...WASH_DEFAULT],
-  MACRAME:                [...WASH_DEFAULT],
   MALIBU:                 [...WASH_DEFAULT],
   MALTE:                  [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
                              {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
