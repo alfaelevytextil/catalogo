@@ -5,7 +5,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 // Ícones que representam "indicado para" (uso)
-const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg'];
+const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg','25.LAZER.jpg','25.FORRO.jpg'];
 
 let currentLightboxImages = [];
 let currentLightboxIndex  = 0;
