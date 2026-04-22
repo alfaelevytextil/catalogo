@@ -1,16 +1,15 @@
 /* ═══════════════════════════════════════════════════════════════
    MODAL + LIGHTBOX — js/modal.js
    Controla a abertura/fechamento do modal de tecido e do lightbox.
-   Depende de: fabrics-data.js (deve ser carregado antes)
+   Depende de: fabrics-data.js e vendedores.js (carregados antes)
    ═══════════════════════════════════════════════════════════════ */
 
-// Ícones que representam "indicado para" (uso)
-const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg','25.LAZER.jpg','25.FORRO.jpg'];
+const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg'];
 
 let currentLightboxImages = [];
 let currentLightboxIndex  = 0;
 
-// ── Helpers ──────────────────────────────────────────────────
+/* ── Helpers ───────────────────────────────────────────────── */
 function pageFile(n) {
   return 'page-' + String(n).padStart(2, '0') + '.jpg';
 }
@@ -18,34 +17,32 @@ function pageFile(n) {
 function renderAttrIcons(list) {
   return list.map(attr => {
     const label = attr
-      .replace(/^\d+\./, '')
-      .replace(/\.jpg$/i, '')
-      .replace(/[-_]/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase());
+      .replace(/^\d+\./, '').replace(/\.jpg$/i, '')
+      .replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
     return `<div class="attr-icon-wrap"><img src="images/icons/${attr}" alt="${label}"></div>`;
   }).join('');
 }
 
-// ── Abre o modal de um tecido ─────────────────────────────────
+/* ── Abre modal de tecido ───────────────────────────────────── */
 function openFabric(key) {
   const f = FABRICS[key];
   if (!f) return;
 
-  // Capa e textos básicos
+  /* Capa e textos básicos */
   document.getElementById('fabricModalCover').src = `images/tecidos/${f.category}/${key}/${pageFile(1)}`;
   document.getElementById('fabricModalName').innerHTML = f.name;
   document.getElementById('fabricModalTag').textContent = f.tag;
 
-  // Descrição — divide em parágrafos para legibilidade
-  const rawDesc = f.desc || '';
+  /* Descrição em parágrafos */
+  const rawDesc   = f.desc || '';
   const sentences = rawDesc.split(/(?<=[.!?])\s+/);
-  const mid = Math.ceil(sentences.length / 2);
-  const descHTML = sentences.length > 3
+  const mid       = Math.ceil(sentences.length / 2);
+  const descHTML  = sentences.length > 3
     ? `<p>${sentences.slice(0, mid).join(' ')}</p><p>${sentences.slice(mid).join(' ')}</p>`
     : `<p>${rawDesc}</p>`;
   document.getElementById('fabricModalDesc').innerHTML = descHTML;
 
-  // Especificações técnicas
+  /* Especificações técnicas */
   const largura     = f.largura || null;
   const larguraLine = document.getElementById('specLarguraLine');
   if (largura) {
@@ -58,7 +55,7 @@ function openFabric(key) {
   document.getElementById('specGramatura').innerText  = f.gramatura   || '-';
   document.getElementById('specComposicao').innerText = f.composicao  || '-';
 
-  // Ícones de atributos
+  /* Ícones de atributos */
   const attrs    = f.attributes || [];
   const indicado = attrs.filter(a =>  USO_ICONS.some(u => a.toUpperCase().includes(u.split('.')[1].toUpperCase())));
   const atributos= attrs.filter(a => !USO_ICONS.some(u => a.toUpperCase().includes(u.split('.')[1].toUpperCase())));
@@ -68,16 +65,21 @@ function openFabric(key) {
   document.getElementById('attrIndicadoSection').style.display  = indicado.length  ? '' : 'none';
   document.getElementById('attrAtributosSection').style.display = atributos.length ? '' : 'none';
 
-  // Link WhatsApp — será atualizado pelo vendedores.js se houver vendedor ativo
-  document.getElementById('fabricModalWpp').href =
-    `https://wa.me/5511957717470?text=Olá!%20Tenho%20interesse%20no%20tecido%20${encodeURIComponent(f.name)}.`;
+  /* ── Link WhatsApp — usa vendedor ativo + nome do tecido ── */
+  const wppLink = window.buildWppLink ? window.buildWppLink(f.name)
+    : `https://wa.me/5511957717470?text=Olá!%20Tenho%20interesse%20no%20tecido%20${encodeURIComponent(f.name)}.`;
+  document.getElementById('fabricModalWpp').href = wppLink;
 
-  // Botão Book
-  const bookBtn  = document.getElementById('fabricModalBook');
-  bookBtn.href   = `book.html?category=${f.category}&fabric=${key}`;
+  /* Atualiza botão flutuante com contexto do tecido */
+  const floatBtn = document.getElementById('wppFloat');
+  if (floatBtn) floatBtn.href = wppLink;
+
+  /* Botão Book */
+  const bookBtn = document.getElementById('fabricModalBook');
+  bookBtn.href  = `book.html?category=${f.category}&fabric=${key}`;
   bookBtn.style.display = 'inline-flex';
 
-  // Grid de cores/variações (páginas 2 em diante)
+  /* Grid de cores/variações */
   const grid          = document.getElementById('fabricModalGrid');
   const colorsSection = document.getElementById('fabricColorsSection');
   grid.innerHTML      = '';
@@ -85,8 +87,7 @@ function openFabric(key) {
 
   const colorPages = f.pages - 1;
   if (colorPages > 0) {
-    document.getElementById('fabricColorTitle').childNodes[0].textContent =
-      f.colorsTitle + ' ';
+    document.getElementById('fabricColorTitle').childNodes[0].textContent = f.colorsTitle + ' ';
     document.getElementById('fabricColorCount').textContent =
       colorPages + ' ' + (colorPages === 1 ? 'item' : 'itens');
     colorsSection.style.display = 'block';
@@ -110,16 +111,20 @@ function openFabric(key) {
   document.body.style.overflow = 'hidden';
 }
 
-// ── Fecha o modal ─────────────────────────────────────────────
+/* ── Fecha modal ─────────────────────────────────────────────── */
 function closeFabricModal(e) {
   if (e.target === document.getElementById('fabricModal')) closeFabricModalDirect();
 }
 function closeFabricModalDirect() {
   document.getElementById('fabricModal').classList.remove('open');
   document.body.style.overflow = '';
+
+  /* Reverte botão flutuante para mensagem genérica do vendedor */
+  const floatBtn = document.getElementById('wppFloat');
+  if (floatBtn && window.buildWppLink) floatBtn.href = window.buildWppLink();
 }
 
-// ── Lightbox ──────────────────────────────────────────────────
+/* ── Lightbox ─────────────────────────────────────────────────── */
 function openLightbox(idx) {
   currentLightboxIndex = idx;
   document.getElementById('lightboxImg').src = currentLightboxImages[idx];
@@ -134,9 +139,9 @@ function lightboxNav(dir) {
   document.getElementById('lightboxImg').src = currentLightboxImages[currentLightboxIndex];
 }
 
-// ── Atalhos de teclado ────────────────────────────────────────
+/* ── Atalhos de teclado ──────────────────────────────────────── */
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape')      { closeLightbox(); closeFabricModalDirect(); }
-  if (e.key === 'ArrowLeft')   lightboxNav(-1);
-  if (e.key === 'ArrowRight')  lightboxNav(1);
+  if (e.key === 'Escape')     { closeLightbox(); closeFabricModalDirect(); }
+  if (e.key === 'ArrowLeft')  lightboxNav(-1);
+  if (e.key === 'ArrowRight') lightboxNav(1);
 });

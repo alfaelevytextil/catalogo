@@ -7,72 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/book-style.css">
-<style>
-.bl-social-btns{display:flex;gap:14px;justify-content:center;align-items:center;margin-top:32px;flex-wrap:wrap;}
-.bl-social-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid;transition:all .3s;white-space:nowrap;}
-.bl-social-btn--wpp{background:#25D366;border-color:#25D366;color:#fff;}
-.bl-social-btn--wpp:hover{background:#1ebe5a;}
-.bl-social-btn--ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:transparent;color:#fff;}
-.bl-social-btn--ig:hover{opacity:.88;}
-.pg-blank--opening{position:absolute!important;inset:0!important;display:flex!important;background:linear-gradient(160deg,#2b1050 0%,#0e0818 60%,#06020e 100%)!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;padding:40px 24px 24px;}
-.pg-blank--opening .pg-blank-watermark{color:rgba(200,160,58,.22) !important;letter-spacing:10px;margin-bottom:8px;font-size:clamp(24px,5vw,40px);}
-.pg-blank--opening .pg-blank-watermark em{color:rgba(139,69,200,.25) !important;}
-.pg-blank-tagline{font-family:'Jost',sans-serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:rgba(200,160,58,.3);}
-.pg-blank-center{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;}
-.pg-blank-social{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;width:100%;padding:0;flex-wrap:wrap;}
-.pg-blank-social-title{display:none;}
-.pg-blank-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid;transition:all .3s;}
-.pg-blank-btn--wpp{background:#25D366;border-color:#25D366;color:#fff;}
-.pg-blank-btn--ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-color:transparent;color:#fff;}
-.pg-cover-social{display:none;flex-direction:column;align-items:center;gap:10px;padding:16px 20px;position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);}
-.pg-cover-social-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
-.pg-cover-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:all .3s;}
-.pg-cover-btn--wpp{background:#25D366;color:#fff;}
-.pg-cover-btn--ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;}
-@media(max-width:700px){.pg-cover-social{display:flex;}}
-.pg-intro-wash{margin-top:22px;text-align:center;}
-.pg-intro-wash-title{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:rgba(200,160,58,.75);margin-bottom:16px;}
-.pg-intro-wash-icons{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
-.pg-intro-wash-item{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:52px;}
-/* Ícones de lavagem maiores */
-.pg-intro-wash-icon{width:72px;height:72px;border:1.5px solid rgba(63,45,83,.3);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(63,45,83,.7);}
-.pg-intro-wash-icon img{width:54px;height:54px;object-fit:contain;}
-.pg-intro-wash-item span{font-size:8px;letter-spacing:.5px;color:rgba(63,45,83,.65);text-align:center;line-height:1.3;max-width:74px;}
-/* ── Books Dropbox dropdown ── */
-.bl-dropbox-wrap{position:relative;display:inline-flex;flex-direction:column;align-items:center;margin-top:24px;}
-.bl-dropbox-btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;background:rgba(200,160,58,.08);border:1px solid rgba(200,160,58,.35);color:var(--gold-lt);cursor:pointer;transition:all .3s;}
-.bl-dropbox-btn:hover{background:rgba(200,160,58,.14);border-color:var(--gold);}
-.bl-dropbox-btn.open .bl-dropbox-arrow{transform:rotate(180deg);}
-.bl-dropbox-wrap{position:relative;display:inline-flex;flex-direction:column;align-items:center;margin-top:24px;z-index:30;}
-.bl-dropbox-menu{display:none;position:absolute;bottom:calc(100% + 8px);top:auto;left:50%;transform:translateX(-50%);background:rgba(10,5,20,.98);border:1px solid rgba(200,160,58,.2);min-width:240px;z-index:100;box-shadow:0 -8px 48px rgba(0,0,0,.7);}
-.bl-dropbox-menu.open{display:block;}
-.bl-dropbox-item{display:flex;align-items:center;gap:10px;padding:12px 20px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(200,160,58,.08);transition:background .2s,color .2s;}
-.bl-dropbox-item:last-child{border-bottom:none;}
-.bl-dropbox-item:hover{background:rgba(200,160,58,.08);color:var(--gold-lt);}
-
-.pg-cover{position:absolute!important;inset:0!important;display:flex!important;flex-direction:column!important;background:linear-gradient(160deg,#2b1050 0%,#0e0818 60%,#06020e 100%)!important;align-items:center!important;justify-content:center!important;}
-.pg-cover-inner{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;gap:16px;position:relative;z-index:2;}
-/* Reader footer social buttons */
-.br-footer-social{display:flex;align-items:center;gap:8px;flex-shrink:0;}
-.br-footer-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:none;transition:all .3s;white-space:nowrap;}
-.br-footer-btn--wpp{background:#25D366;color:#fff;}
-.br-footer-btn--wpp:hover{background:#1ebe5a;}
-.br-footer-btn--ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;}
-.br-footer-btn--ig:hover{opacity:.85;}
-@media(max-width:700px){.br-footer-social{display:none;}}
-.pg-intro-social{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:14px 20px;position:absolute;bottom:0;left:0;right:0;z-index:3;}
-.pg-social-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:all .3s;}
-.pg-social-btn--wpp{background:#25D366;color:#fff;}
-.pg-social-btn--ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;}
-.br-ig-btn{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-size:9px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:opacity .3s;white-space:nowrap;font-family:'Jost',sans-serif;}
-.br-ig-btn:hover{opacity:.85;}
-@media(max-width:900px){.br-ig-btn span{display:none;}.br-ig-btn{padding:7px 10px;}}
-#btnReturnCatalog:hover{border-color:var(--gold,#c8a03a);color:#fff;background:rgba(200,160,58,.15);}
-</style>
 </head>
 <body>
 
-<!-- SVG ICONS -->
+<!-- ═══════════════════════════════════════
+     SVG ICONS (sprite oculto)
+════════════════════════════════════════ -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
   <symbol id="ico-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
   <symbol id="ico-arrow" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/></symbol>
@@ -82,6 +22,9 @@
   <symbol id="ico-zoom" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></symbol>
 </svg>
 
+<!-- ═══════════════════════════════════════
+     LANDING — página inicial do book
+════════════════════════════════════════ -->
 <section id="landing" class="bl-landing">
   <header class="bl-header">
     <a href="index.html" class="bl-header-back">
@@ -90,6 +33,7 @@
     </a>
     <div class="bl-header-logo">Alfa <span>&</span> Levy</div>
     <div class="bl-header-icons">
+      <!-- WPP escondido em mobile via CSS (botão flutuante cobre essa necessidade) -->
       <a href="https://wa.me/5511957717470" target="_blank" class="bl-header-icon-btn bl-header-icon-btn--wpp" title="WhatsApp">
         <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
       </a>
@@ -101,10 +45,12 @@
       </a>
     </div>
   </header>
+
   <div class="bl-content">
     <p class="bl-eyebrow">Lookbook Digital · 2026</p>
     <h1 class="bl-title">Books de <em>Tecidos</em></h1>
     <p class="bl-desc">Selecione a coleção para explorar o lookbook completo com virada de páginas</p>
+
     <div class="bl-cards">
       <button class="bl-card" onclick="openBook('LISOS')">
         <div class="bl-card-top"><span class="bl-card-badge">Coleção</span></div>
@@ -131,6 +77,7 @@
         <div class="bl-card-arrow"><svg style="width:18px;height:18px;fill:currentColor"><use href="#ico-arrow"/></svg></div>
       </button>
     </div>
+
     <p class="bl-hint">Clique em uma coleção para abrir o lookbook completo</p>
 
     <!-- BOOKS DROPBOX -->
@@ -141,15 +88,19 @@
         <svg class="bl-dropbox-arrow" style="width:12px;height:12px;fill:currentColor;transition:transform .25s" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
       </button>
       <div class="bl-dropbox-menu" id="blDropboxMenu">
-        <!-- ══ PARA ADICIONAR NOVO BOOK: copie a linha abaixo e cole aqui com o novo link e nome ══
-        <a href="LINK_DROPBOX" target="_blank" class="bl-dropbox-item"><svg style="width:13px;height:13px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg> Nome do Book</a>
-        ═══════════════════════════════════════════════════════════════════════════════════════════ -->
+        <!-- ═══ PARA ADICIONAR NOVO BOOK: copie a linha abaixo e cole aqui ═══
+        <a href="LINK_DROPBOX" target="_blank" class="bl-dropbox-item">
+          <svg style="width:13px;height:13px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+          Nome do Book
+        </a>
+        ═══════════════════════════════════════════════════════════════════════ -->
         <a href="https://www.dropbox.com/sh/n4aqyovq332k5wm/AAD0AzHSwxjn-xr2X0JLsk-Qa?dl=0" target="_blank" class="bl-dropbox-item">
           <svg style="width:13px;height:13px;fill:currentColor;flex-shrink:0" viewBox="0 0 24 24"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
           Book Moda Fitness
         </a>
       </div>
     </div>
+
     <div class="bl-social-btns">
       <a href="https://wa.me/5511957717470" target="_blank" class="bl-social-btn bl-social-btn--wpp">
         <svg style="width:15px;height:15px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
@@ -165,6 +116,7 @@
       </a>
     </div>
   </div>
+
   <footer class="bl-footer">
     <span>Alfa & Levy Têxtil · São Paulo · Brasil</span>
     <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;">
@@ -185,6 +137,9 @@
 </section>
 
 
+<!-- ═══════════════════════════════════════
+     READER — leitor com virada 3D
+════════════════════════════════════════ -->
 <section id="reader" class="br-reader">
   <header class="br-header">
     <div class="br-header-left">
@@ -201,6 +156,7 @@
     </div>
     <div class="br-header-center">
       <span class="br-header-cat" id="brHeaderCat">—</span>
+      <span class="br-header-fabric" id="brHeaderFabric"></span>
     </div>
     <div class="br-header-right">
       <div class="br-counter-wrap">
@@ -211,6 +167,7 @@
           <button onmousedown="commitPageInput()" class="br-page-go">→</button>
         </div>
       </div>
+      <!-- WPP escondido em mobile via CSS (botão flutuante cobre essa necessidade) -->
       <a id="brWpp" href="https://wa.me/5511957717470" target="_blank" class="br-hdr-icon-btn br-hdr-icon-btn--wpp" title="Pedir Amostra">
         <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
       </a>
@@ -227,11 +184,11 @@
     <button class="br-nav br-nav-prev" id="btnPrev" onclick="prevPage()" title="Página anterior">&#8249;</button>
     <div class="br-perspective" id="brPerspective">
       <div class="br-book" id="brBook">
-        <div class="br-page br-page-left" id="pageLeft"></div>
+        <div class="br-page br-page-left"  id="pageLeft"></div>
         <div class="br-page br-page-right" id="pageRight"></div>
         <div class="br-flipper" id="brFlipper">
           <div class="br-flipper-face br-flipper-front" id="flipFront"></div>
-          <div class="br-flipper-face br-flipper-back" id="flipBack"></div>
+          <div class="br-flipper-face br-flipper-back"  id="flipBack"></div>
         </div>
         <div class="br-spine"></div>
       </div>
@@ -243,22 +200,28 @@
     <span class="br-footer-fabric" id="brFooterFabric"></span>
     <div class="br-progress">
       <div class="br-progress-bar" id="brProgressBar" onclick="jumpFromProgress(event)" title="Clique para navegar">
-        <div class="br-progress-fill" id="brProgressFill"></div>
+        <div class="br-progress-fill"  id="brProgressFill"></div>
         <div class="br-progress-thumb" id="brProgressThumb"></div>
       </div>
       <span class="br-progress-label" id="brProgressLabel" onclick="togglePageInput()" title="Clique para ir a uma página"></span>
     </div>
-
   </div>
 </section>
 
 
-<!-- Botão X — visível só quando acessado via ?fabric= do catálogo -->
-<button id="btnReturnCatalog" onclick="returnToCatalog()" title="Fechar e voltar ao tecido" style="display:none;position:fixed;top:10px;right:16px;z-index:9999;background:rgba(14,8,24,.92);border:1px solid rgba(200,160,58,.35);color:rgba(255,255,255,.75);width:36px;height:36px;cursor:pointer;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(6px);">
+<!-- ═══════════════════════════════════════
+     BOTÃO FECHAR — volta ao catálogo no tecido
+     (visível só quando acessado via ?fabric=)
+════════════════════════════════════════ -->
+<button id="btnReturnCatalog" onclick="returnToCatalog()" title="Fechar e voltar ao tecido"
+  style="display:none;position:fixed;top:10px;right:16px;z-index:9999;background:rgba(14,8,24,.92);border:1px solid rgba(200,160,58,.35);color:rgba(255,255,255,.75);width:36px;height:36px;cursor:pointer;align-items:center;justify-content:center;transition:all .3s;backdrop-filter:blur(6px);">
   <svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
 </button>
 
-<!-- MENU DE TECIDOS -->
+
+<!-- ═══════════════════════════════════════
+     MENU DE TECIDOS (drawer)
+════════════════════════════════════════ -->
 <div class="fm-overlay" id="fmOverlay" onclick="closeFabricMenu()"></div>
 <div class="fm-drawer" id="fmDrawer">
   <div class="fm-head">
@@ -277,7 +240,9 @@
 </div>
 
 
-<!-- ZOOM LIGHTBOX -->
+<!-- ═══════════════════════════════════════
+     ZOOM LIGHTBOX
+════════════════════════════════════════ -->
 <div class="zoom-overlay" id="zoomOverlay">
   <button class="zoom-close" onclick="closeZoom()">
     <svg style="width:20px;height:20px;fill:currentColor"><use href="#ico-close"/></svg>
@@ -295,738 +260,27 @@
 </div>
 
 
-<script>
-const BOOK_DATA = {
-  // -- COLEÇÃO LISOS --
-  LIRUS:                  { name:'Lirus',                  category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  NEW_TRIP:               { name:'New Trip',               category:'LISOS',        tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  // -- COLEÇÃO TRAMAS --
-  MACRAME:                { name:'Macramê',                category:'TRAMAS',       tag:'Moda Praia · Moda',               bookPages:2 },
-  MACRAME_PALMER:         { name:'Macramê Franja Palmer',  category:'TRAMAS',       tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  // -- COLEÇÃO TEXTURIZADOS --
-  ANARRUGA_BRILHANTE:     { name:'Anarruga Brilhante',     category:'TEXTURIZADOS', tag:'Moda Praia · Lingerie',           bookPages:2},
-  ANARRUGA_PRAIA:         { name:'Anarruga Praia',         category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
-  AREZZO:                 { name:'Arezzo',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  BOUCLE:                 { name:'Bouclê',                 category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:2 },
-  BOUCLE_NERVUS:          { name:'Bouclê Nervus',          category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:2 },
-  BOUCLE_PETALAS:         { name:'Bouclê Pétalas',         category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:2 },
-  CANCUN:                 { name:'Cancún',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  CANELADO_BLACKOUT:      { name:'Canelado Blackout',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  CANELADO_DE_COMPRESSAO: { name:'Canelado Compressão',    category:'TEXTURIZADOS', tag:'Fitness · Moda Praia',            bookPages:2 },
-  CANELADO_DIAGONAL:      { name:'Canelado Diagonal',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  CANELADO_EDEN:          { name:'Canelado Eden',          category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:2 },
-  CANELADO_FUJI:          { name:'Canelado Fuji',          category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
-  CANELADO_LENATEX:       { name:'Canelado Lenatex',       category:'TEXTURIZADOS', tag:'Lingerie · Moda',                 bookPages:2 },
-  CANELADO_PILLE:         { name:'Canelado Pille',         category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  CANELADO_POLIESTER:     { name:'Canelado Poliéster',     category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
-  CANELADO_POWER:         { name:'Canelado Power',         category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
-  CANELADO_TREND_MOVE:    { name:'Canelado Trend Move',    category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
-  CANELADO_WONDER:        { name:'Canelado Wonder',        category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
-  CARMEL:                 { name:'Carmel',                 category:'TEXTURIZADOS', tag:'Fitness · Moda Praia · Casual',   bookPages:2 },
-  CREPINHO:               { name:'Crepinho',               category:'TEXTURIZADOS', tag:'Moda · Moda Praia',               bookPages:2 },
-  CREPONADO:              { name:'Creponado',              category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
-  CROCHE_SANTORINI:       { name:'Crochê Santorini',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  CROCHETE:               { name:'Crochete',               category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:2 },
-  CRUNCH_LISTRADO:        { name:'Crunch Listrado',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  CRUNCH_POA:             { name:'Crunch Poá',             category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  DIAMOND:                { name:'Diamond',                category:'TEXTURIZADOS', tag:'Fitness · Lingerie',              bookPages:2 },
-  DOTS:                   { name:'Dots',                   category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  JACQUARD_BROCADO:       { name:'Jacquard Brocado',       category:'TEXTURIZADOS', tag:'Moda Praia · Fitness',            bookPages:2 },
-  JACQUARD_CONCHAS:       { name:'Jacquard Conchas',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_CONCHINHAS:    { name:'Jacquard Conchinhas',    category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_DEGRADE:       { name:'Jacquard Degradê',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_GITA:          { name:'Jacquard Gita',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_KASHIMIR:      { name:'Jacquard Kashimir',      category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_LEAF:          { name:'Jacquard Leaf',          category:'TEXTURIZADOS', tag:'Moda Praia',                      bookPages:2 },
-  JACQUARD_LINES:         { name:'Jacquard Lines',         category:'TEXTURIZADOS', tag:'Fitness',                         bookPages:2 },
-  JACQUARD_NILO:          { name:'Jacquard Nilo',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  JACQUARD_ONCA:          { name:'Jacquard Onça',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_PIQUET:        { name:'Jacquard Piquet',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_WINNER:        { name:'Jacquard Winner',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_YAHALOM:       { name:'Jacquard Yahalom',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  JACQUARD_ZIGZAG_PUZZLE: { name:'Jacquard Zigzag Puzzle', category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LASTEX_GLOSS:           { name:'Lastex Gloss',           category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LASTEX_LIGHT:           { name:'Lastex Light',           category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LIS:                    { name:'LIS',                    category:'TEXTURIZADOS', tag:'Moda Praia · Fitness · Lingerie', bookPages:2 },
-  LUREX_3_DOURADO:        { name:'Lurex 3 Dourado',        category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LUREX_3_PRATA:          { name:'Lurex 3 Prata',          category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LUREX_4_E_OUTROS:       { name:'Lurex 4 e Outros',       category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LUX_DUBAI:              { name:'Lux Dubai',              category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  LYCRA_JEANS:            { name:'Lycra Jeans',            category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  MALIBU:                 { name:'Malibu',                 category:'TEXTURIZADOS', tag:'Fitness · Moda Casual · Praia',   bookPages:2 },
-  MALTE:                  { name:'Malte',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda Casual',        bookPages:2 },
-  MARRAKESH:              { name:'Marrakesh',              category:'TEXTURIZADOS', tag:'Fitness · Lingerie · Praia',      bookPages:2 },
-  MARSELHA:               { name:'Marselha',               category:'TEXTURIZADOS', tag:'Fitness · Moda Praia',            bookPages:2 },
-  MONTANA:                { name:'Montana',                category:'TEXTURIZADOS', tag:'Fitness · Moda Casual',           bookPages:2 },
-  POINTS:                 { name:'Points',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  POSITANO:               { name:'Positano',               category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  ROCKS:                  { name:'Rocks',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  SAINT_MARTIN:           { name:'Saint Martin',           category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  SEREIA:                 { name:'Sereia',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  SUKUZA:                 { name:'Sukuza',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  TEXAS:                  { name:'Texas',                  category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  VERONA:                 { name:'Verona',                 category:'TEXTURIZADOS', tag:'Moda Praia · Moda',               bookPages:2 },
-  // -- COLEÇÃO ESTAMPADOS --
-  SARDINHA:               { name:'Sardinha',               category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:2 },
-  SARDINHAS:              { name:'Sardinhas',              category:'ESTAMPADOS',   tag:'Moda Praia · Moda',               bookPages:2 },
-};
-
-/* ══════════════════════════════════════════════════════
-   ESPECIFICAÇÕES DE LAVAGEM — edite cada tecido abaixo
-   Ícones disponíveis em images/lavagem/:
-   lavar-30.jpg · lavar-40.jpg · nao-alvejar.jpg
-   secar-sombra.jpg · nao-secar.jpg · ferro-frio.jpg
-   ferro-medio.jpg · nao-passar.jpg · lavar-mao.jpg
-   ══════════════════════════════════════════════════════ */
-const WASH_DEFAULT = [
-  {img:'images/lavagem/LAVAGEM-MANUAL.jpg',    label:'LAVAR DE FORMA MANUAL'},
-  {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-  {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-  {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-  {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'},
-  {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'},
-  {img:'images/lavagem/MAX-30-1.jpg',  label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-  {img:'images/lavagem/MAX-40.jpg',  label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
-  {img:'images/lavagem/SECAR-MIN.jpg',  label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-  {img:'images/lavagem/UMIDO.jpg',  label:'LIMPEZA A ÚMIDO'},
-  {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',  label:'NÃO LIMPAR A ÚMIDO'},
-];
-/* ══════════════════════════════════════════════════════════
-   COMO PERSONALIZAR POR TECIDO:
-   Para usar os ícones padrão em um tecido, deixe [...WASH_DEFAULT].
-   Para ícones DIFERENTES, substitua pelo array que você quer. Exemplo:
-
-   ANARRUGA_BRILHANTE: [
-     {img:'images/lavagem/LAVAGEM-MANUAL.jpg',    label:'LAVAR DE FORMA MANUAL'},
-     {img:'images/lavagem/ferro-medio.jpg',       label:'FERRO MÉDIO'},
-   ],
-
-   Os ícones disponíveis estão na pasta images/lavagem/:
-   LAVAGEM-MANUAL.jpg · NAO-ALVEJAR-BRANQUEAR.jpg · NAO-LAVAR-SECO.jpg
-   NAO-SECAR-SECADORA.jpg · NAO-PASSAR.jpg · SECAR-VARAL.jpg
-   ══════════════════════════════════════════════════════════ */
-const WASH_DATA = {
-  // -- TECIDOS LISOS --
-  LIRUS:                  [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR NA HORIZONTAL'}],
-  NEW_TRIP:               [{img:'images/lavagem/MAX-30-1.jpg', label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/SECAR-MIN.jpg',label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-                             {img:'images/lavagem/SECAR-VARAL.jpg',   label:'SECAR EM VARAL, À SOMBRA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/NAO-LAVAR-SECO.jpg',  label:'NÃO LAVAR A SECO'}, {img:'images/lavagem/UMIDO.jpg',  label:'LIMPEZA A ÚMIDO'}],
-  // -- TECIDOS TRAMADOS --
-    MACRAME:                [...WASH_DEFAULT],
-  MACRAME_PALMER:         [{img:'images/lavagem/MAX-40.jpg', label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/PASSAR-MAX-100.jpg',  label:'PASSAR EM TEMPERATURA MÁX. 100°C'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}, {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',  label:'NÃO LIMPAR A ÚMIDO'}],
-
-
-// -- TECIDOS TEXTURIZADOS --
-  ANARRUGA_BRILHANTE:     [...WASH_DEFAULT],
-  ANARRUGA_PRAIA:         [...WASH_DEFAULT],
-  AREZZO:                 [...WASH_DEFAULT],
-  BOUCLE:                 [...WASH_DEFAULT],
-  BOUCLE_NERVUS:          [...WASH_DEFAULT],
-  BOUCLE_PETALAS:         [...WASH_DEFAULT],
-  CANCUN:                 [...WASH_DEFAULT],
-  CANELADO_BLACKOUT:      [...WASH_DEFAULT],
-  CANELADO_DE_COMPRESSAO: [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
-  CANELADO_DIAGONAL:      [...WASH_DEFAULT],
-  CANELADO_EDEN:          [...WASH_DEFAULT],
-  CANELADO_FUJI:          [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
-  CANELADO_LENATEX:       [...WASH_DEFAULT],
-  CANELADO_PILLE:         [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-HORIZONTAL.jpg',  label:'SECAR NA HORIZONTAL'}],
-  CANELADO_POLIESTER:     [...WASH_DEFAULT],
-  CANELADO_POWER:         [...WASH_DEFAULT],
-  CANELADO_TREND_MOVE:    [{img:'images/lavagem/MAX-30-1.jpg', label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/SECAR-MIN.jpg',label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-                             {img:'images/lavagem/SECAR-VARAL.jpg',   label:'SECAR EM VARAL, À SOMBRA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/NAO-LAVAR-SECO.jpg',  label:'NÃO LAVAR A SECO'}, {img:'images/lavagem/UMIDO.jpg',  label:'LIMPEZA A ÚMIDO'}], 
-  CANELADO_WONDER:        [...WASH_DEFAULT],
-  CARMEL:                 [...WASH_DEFAULT],
-  CREPINHO:               [...WASH_DEFAULT],
-  CREPONADO:              [...WASH_DEFAULT],
-  CROCHE_SANTORINI:       [...WASH_DEFAULT],
-  CROCHETE:               [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/PASSAR-MAX-100.jpg',  label:'PASSAR EM TEMPERATURA MÁX. 110°C'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
-  CRUNCH_LISTRADO:        [...WASH_DEFAULT],
-  CRUNCH_POA:             [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
-  DIAMOND:                [...WASH_DEFAULT],
-  DOTS:                   [...WASH_DEFAULT],
-  JACQUARD_BROCADO:       [...WASH_DEFAULT],
-  JACQUARD_CONCHAS:       [...WASH_DEFAULT],
-  JACQUARD_CONCHINHAS:    [...WASH_DEFAULT],
-  JACQUARD_DEGRADE:       [...WASH_DEFAULT],
-  JACQUARD_GITA:          [...WASH_DEFAULT],
-  JACQUARD_KASHIMIR:      [...WASH_DEFAULT],
-  JACQUARD_LEAF:          [...WASH_DEFAULT],
-  JACQUARD_LINES:         [...WASH_DEFAULT],
-  JACQUARD_NILO:          [...WASH_DEFAULT],
-  JACQUARD_ONCA:          [...WASH_DEFAULT],
-  JACQUARD_PIQUET:        [...WASH_DEFAULT],
-  JACQUARD_WINNER:        [...WASH_DEFAULT],
-  JACQUARD_YAHALOM:       [...WASH_DEFAULT],
-  JACQUARD_ZIGZAG_PUZZLE: [...WASH_DEFAULT],
-  LASTEX_GLOSS:           [...WASH_DEFAULT],
-  LASTEX_LIGHT:           [...WASH_DEFAULT],
-  LIS:                    [...WASH_DEFAULT],
-  LUREX_3_DOURADO:        [...WASH_DEFAULT],
-  LUREX_3_PRATA:          [...WASH_DEFAULT],
-  LUREX_4_E_OUTROS:       [...WASH_DEFAULT],
-  LUX_DUBAI:              [...WASH_DEFAULT],
-  LYCRA_JEANS:            [...WASH_DEFAULT],
-  MALIBU:                 [...WASH_DEFAULT],
-  MALTE:                  [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
-  MARRAKESH:              [...WASH_DEFAULT],
-  MARSELHA:               [...WASH_DEFAULT],
-  MONTANA:                [...WASH_DEFAULT],
-  POINTS:                 [...WASH_DEFAULT],
-  POSITANO:               [...WASH_DEFAULT],
-  ROCKS:                  [...WASH_DEFAULT],
-  SAINT_MARTIN:           [...WASH_DEFAULT],
-  SEREIA:                 [...WASH_DEFAULT],
-  SUKUZA:                 [...WASH_DEFAULT],
-  TEXAS:                  [...WASH_DEFAULT],
-  VERONA:                 [{img:'images/lavagem/LAVAGEM-MANUAL.jpg', label:'LAVAR DE FORMA MANUAL'},
-                             {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-                             {img:'images/lavagem/NAO-LAVAR-SECO.jpg',label:'NÃO LAVAR A SECO'},
-                             {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',   label:'NÃO SECAR EM MÁQUINA SECADORA'},
-                             {img:'images/lavagem/NAO-PASSAR.jpg',  label:'NÃO PASSAR'}, {img:'images/lavagem/SECAR-VARAL.jpg',  label:'SECAR EM VARAL, À SOMBRA'}],
-                             // -- TECIDOS ESTAMPADOS --
-  SARDINHA:               [...WASH_DEFAULT],
-  SARDINHAS:              [...WASH_DEFAULT],
-};
-
-let pages=[], currentSpread=0, totalSpreads=0, isAnimating=false, activeCategory=null;
-let isMobileView=false, mobilePages=[], mobilePage=0;
-function pad(n){return String(n).padStart(2,'0');}
-function checkMobile(){isMobileView=window.innerWidth<700;}
-
-function generatePages(category){
-  const result=[];
-  result.push({type:'blank', isOpening:true});
-  result.push({type:'book-cover',category});
-  const entries=Object.entries(BOOK_DATA).filter(([,f])=>f.category===category);
-  entries.forEach(([key,fabric],idx)=>{
-    if(result.length%2!==0)result.push({type:'blank'});
-    result.push({type:'fabric-intro',key,fabric,fabricIndex:idx});
-    result.push({type:'fabric-cover',key,fabric,src:`images/tecidos/${category}/${key}/page-01.jpg`});
-    for(let i=1;i<=(fabric.bookPages||0);i++){
-      result.push({type:'fabric-photo',key,fabric,src:`images/book/${category}/${key}/photo-${pad(i)}.jpg`,n:i});
-    }
-    if(result.length%2!==0)result.push({type:'blank'});
-  });
-  return result;
-}
-
-const CAT_LABELS={LISOS:'Lisos',TEXTURIZADOS:'Texturizados',ESTAMPADOS:'Estampados'};
-
-function renderPage(page){
-  if(!page||page.type==='blank')return renderBlank(page);
-  switch(page.type){
-    case 'book-cover':   return renderCover(page);
-    case 'fabric-intro': return renderIntro(page);
-    case 'fabric-cover':
-    case 'fabric-photo': return renderPhoto(page);
-    default: return renderBlank(page);
-  }
-}
-function renderBlank(page){
-  const isOpening = page && page.isOpening;
-  if(isOpening){
-    return `<div class="pg pg-blank pg-blank--opening">
-      <div class="pg-blank-center">
-        <div class="pg-blank-watermark">Alfa <em>&</em> Levy</div>
-        <div class="pg-blank-tagline">Tecidos Especiais · São Paulo</div>
-      </div>
-    </div>`;
-  }
-  return `<div class="pg pg-blank"><div class="pg-blank-watermark">Alfa <em>&</em> Levy</div></div>`;
-}
-function renderCover(page){
-  const label=CAT_LABELS[page.category]||page.category;
-  const count=Object.values(BOOK_DATA).filter(f=>f.category===page.category).length;
-  return`<div class="pg pg-cover">
-  <div class="pg-cover-inner">
-    <div class="pg-cover-eyebrow">Lookbook Digital · 2026</div>
-    <div class="pg-cover-line"></div>
-    <div class="pg-cover-brand">Alfa <em>&</em> Levy</div>
-    <div class="pg-cover-cat">${label}</div>
-    <div class="pg-cover-count">${count} tecidos</div>
-    <div class="pg-cover-line"></div>
-    <div class="pg-cover-footer">São Paulo · Brasil</div>
-  </div>
-  </div>`;
-}
-function renderIntro(page){
-  const num=pad(page.fabricIndex+1);
-  const fabricNameEnc=encodeURIComponent(page.fabric.name);
-  const washItems = (WASH_DATA[page.key] || WASH_DEFAULT);
-  const washHTML=washItems.map(w=>`<div class="pg-intro-wash-item"><div class="pg-intro-wash-icon"><img src="${w.img}" alt="${w.label}"></div><span>${w.label}</span></div>`).join('');
-  return`<div class="pg pg-intro">
-    <div class="pg-intro-num">${num}</div>
-    <div class="pg-intro-body">
-      <div class="pg-intro-cat">${CAT_LABELS[page.fabric.category]||page.fabric.category}</div>
-      <div class="pg-intro-name">${page.fabric.name}</div>
-      <div class="pg-intro-divider"></div>
-      <div class="pg-intro-tag">${page.fabric.tag}</div>
-      <div class="pg-intro-wash">
-        <div class="pg-intro-wash-title">Especifica\u00E7\u00F5es de Lavagem</div>
-        <div class="pg-intro-wash-icons">${washHTML}</div>
-      </div>
-    </div>
-    <div class="pg-intro-icons">
-      <a href="https://wa.me/5511957717470?text=Ol%C3%A1!%20Interesse%20no%20tecido%20${fabricNameEnc}." target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--wpp" title="Pedir Amostra via WhatsApp">
-        <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-whatsapp"/></svg>
-      </a>
-      <a href="https://www.instagram.com/levytextil456?igsh=MTBrZHpmNmk1cnc5Yg==" target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--ig pg-intro-icon-btn--levy" title="Instagram @levytextil456">
-        <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-instagram"/></svg>
-      </a>
-      <a href="https://www.instagram.com/alfatextil/" target="_blank" class="pg-intro-icon-btn pg-intro-icon-btn--ig pg-intro-icon-btn--alfa" title="Instagram @alfatextil">
-        <svg style="width:16px;height:16px;fill:currentColor"><use href="#ico-instagram"/></svg>
-      </a>
-      <a href="index.html?fabric=${page.key}" class="pg-intro-btn-cores" title="Ver cores no catálogo">
-        <svg style="width:11px;height:11px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-        Cores
-      </a>
-    </div>
-    <div class="pg-intro-wm">Alfa & Levy</div>
-  </div>`;
-}
-function renderPhoto(page){
-  const isCover=page.type==='fabric-cover';
-  const label=isCover?page.fabric.name:`Foto ${page.n}`;
-  const safeSrc=page.src.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-  return`<div class="pg pg-photo ${isCover?'pg-photo-cover':''}" onclick="openZoom('${safeSrc}')">
-    <img src="${page.src}" alt="${page.fabric.name}" loading="${isCover?'eager':'lazy'}">
-    <div class="pg-photo-overlay">
-      <span class="pg-photo-label">${label}</span>
-      ${!isCover?`<span class="pg-photo-n">${page.n}</span>`:''}
-    </div>
-    ${isCover?`<div class="pg-photo-tag">${page.fabric.tag}</div>`:''}
-    <div class="pg-zoom-hint"><svg style="width:14px;height:14px;fill:currentColor"><use href="#ico-zoom"/></svg></div>
-  </div>`;
-}
-
-function openBook(category,jumpToFabric){
-  checkMobile(); activeCategory=category;
-  pages=generatePages(category); totalSpreads=pages.length/2;
-  let startSpread=0;
-  if(jumpToFabric){for(let i=0;i<pages.length;i++){if(pages[i].key===jumpToFabric&&pages[i].type==='fabric-intro'){startSpread=Math.floor(i/2);break;}}}
-  mobilePages=pages.filter(p=>p&&p.type!=='blank'); mobilePage=0;
-  if(jumpToFabric){for(let i=0;i<mobilePages.length;i++){if(mobilePages[i].key===jumpToFabric){mobilePage=i;break;}}}
-  document.getElementById('landing').style.display='none';
-  document.getElementById('reader').style.display='flex';
-  /* Mostrar botão X se veio do catálogo */
-  const xBtn=document.getElementById('btnReturnCatalog');
-  if(xBtn&&_returnFabricKey)xBtn.style.display='flex';
-  document.getElementById('brHeaderCat').textContent=CAT_LABELS[category]||category;
-  document.getElementById('fmCatLabel').textContent=CAT_LABELS[category]||category;
-  document.getElementById('brWpp').href=`https://wa.me/5511957717470?text=Olá!%20Vi%20o%20lookbook%20de%20${encodeURIComponent(CAT_LABELS[category]||category)}%20e%20gostaria%20de%20mais%20informações.`;
-  currentSpread=startSpread;
-  buildFabricMenu(category);
-  if(isMobileView)renderMobile(mobilePage); else renderSpread(startSpread);
-}
-
-function closeBook(){
-  document.getElementById('reader').style.display='none';
-  document.getElementById('landing').style.display='flex';
-  const btn=document.getElementById('btnReturnCatalog');
-  if(btn)btn.style.display='none';
-  isAnimating=false; document.getElementById('brFlipper').style.display='none';
-  closeFabricMenu(); closeZoom();
-}
-
-function renderSpread(idx){
-  currentSpread=Math.max(0,Math.min(idx,totalSpreads-1));
-  document.getElementById('pageLeft').innerHTML=renderPage(pages[currentSpread*2]);
-  document.getElementById('pageRight').innerHTML=renderPage(pages[currentSpread*2+1]);
-  document.getElementById('brFlipper').style.display='none';
-  updateUI();
-}
-
-function updateUI(){
-  const left=pages[currentSpread*2], right=pages[currentSpread*2+1];
-  let fabricName='';
-  for(const p of [right,left]){if(p&&p.fabric){fabricName=p.fabric.name;break;}}
-  document.getElementById('brHeaderFabric').textContent=fabricName?'— '+fabricName:'';
-  document.getElementById('brFooterFabric').textContent=fabricName;
-  const pct=totalSpreads>1?(currentSpread/(totalSpreads-1))*100:100;
-  document.getElementById('brProgressFill').style.width=pct+'%';
-  document.getElementById('brProgressThumb').style.left=pct+'%';
-  document.getElementById('brProgressLabel').textContent=`${currentSpread+1} / ${totalSpreads}`;
-  document.getElementById('brCounter').textContent=`${currentSpread+1} / ${totalSpreads}`;
-  document.getElementById('btnPrev').disabled=currentSpread<=0;
-  document.getElementById('btnNext').disabled=currentSpread>=totalSpreads-1;
-  document.querySelectorAll('.fm-item').forEach(el=>el.classList.remove('fm-item--active'));
-  if(fabricName){
-    const active=document.querySelector(`.fm-item[data-name="${fabricName.replace(/"/g,'&quot;')}"]`);
-    if(active){active.classList.add('fm-item--active');active.scrollIntoView({block:'nearest',behavior:'smooth'});}
-    document.getElementById('brWpp').href=`https://wa.me/5511957717470?text=Olá!%20Tenho%20interesse%20no%20tecido%20${encodeURIComponent(fabricName)}%20do%20lookbook.`;
-  }
-}
-
-function nextPage(){
-  if(isMobileView){nextMobile();return;}
-  if(isAnimating||currentSpread>=totalSpreads-1)return;
-  const next=currentSpread+1;
-  const eL=document.getElementById('pageLeft'),eR=document.getElementById('pageRight');
-  const eF=document.getElementById('brFlipper'),eFr=document.getElementById('flipFront'),eBk=document.getElementById('flipBack');
-  eFr.innerHTML=eR.innerHTML; eBk.innerHTML=renderPage(pages[next*2]); eR.innerHTML=renderPage(pages[next*2+1]);
-  Object.assign(eF.style,{left:'50%',top:'0',width:'50%',height:'100%',transformOrigin:'0% 50%',transform:'rotateY(0deg)',display:'block'});
-  isAnimating=true; void eF.offsetHeight; eF.classList.add('br-flipping');
-  setTimeout(()=>{eL.innerHTML=renderPage(pages[next*2]);},360);
-  setTimeout(()=>{eF.classList.remove('br-flipping');eF.style.display='none';currentSpread=next;isAnimating=false;updateUI();},720);
-}
-
-function prevPage(){
-  if(isMobileView){prevMobile();return;}
-  if(isAnimating||currentSpread<=0)return;
-  const prev=currentSpread-1;
-  const eL=document.getElementById('pageLeft'),eR=document.getElementById('pageRight');
-  const eF=document.getElementById('brFlipper'),eFr=document.getElementById('flipFront'),eBk=document.getElementById('flipBack');
-  eFr.innerHTML=eL.innerHTML; eBk.innerHTML=renderPage(pages[prev*2+1]); eL.innerHTML=renderPage(pages[prev*2]);
-  Object.assign(eF.style,{left:'0',top:'0',width:'50%',height:'100%',transformOrigin:'100% 50%',transform:'rotateY(0deg)',display:'block'});
-  isAnimating=true; void eF.offsetHeight; eF.classList.add('br-flipping-back');
-  setTimeout(()=>{eR.innerHTML=renderPage(pages[prev*2+1]);},360);
-  setTimeout(()=>{eF.classList.remove('br-flipping-back');eF.style.display='none';currentSpread=prev;isAnimating=false;updateUI();},720);
-}
-
-function renderMobile(idx){
-  mobilePage=Math.max(0,Math.min(idx,mobilePages.length-1));
-  const page=mobilePages[mobilePage];
-  const eR=document.getElementById('pageRight');
-  eR.innerHTML=renderPage(page); eR.style.width='100%';
-  document.getElementById('pageLeft').style.display='none';
-  const fabricName=page&&page.fabric?page.fabric.name:'';
-  document.getElementById('brHeaderFabric').textContent=fabricName?'— '+fabricName:'';
-  document.getElementById('brFooterFabric').textContent=fabricName;
-  const pct=mobilePages.length>1?(mobilePage/(mobilePages.length-1))*100:100;
-  document.getElementById('brProgressFill').style.width=pct+'%';
-  document.getElementById('brProgressThumb').style.left=pct+'%';
-  document.getElementById('brProgressLabel').textContent=`${mobilePage+1} / ${mobilePages.length}`;
-  document.getElementById('brCounter').textContent=`${mobilePage+1} / ${mobilePages.length}`;
-  document.getElementById('btnPrev').disabled=mobilePage<=0;
-  document.getElementById('btnNext').disabled=mobilePage>=mobilePages.length-1;
-}
-function nextMobile(){if(mobilePage<mobilePages.length-1)renderMobile(mobilePage+1);}
-function prevMobile(){if(mobilePage>0)renderMobile(mobilePage-1);}
-
-/* ── MENU DE TECIDOS ── */
-function buildFabricMenu(category){
-  const entries=Object.entries(BOOK_DATA).filter(([,f])=>f.category===category);
-  document.getElementById('fmList').innerHTML=entries.map(([key,fabric],idx)=>`
-    <button class="fm-item" data-key="${key}" data-name="${fabric.name.replace(/"/g,'&quot;')}" onclick="goToFabric('${key}')">
-      <span class="fm-item-num">${pad(idx+1)}</span>
-      <div class="fm-item-info">
-        <span class="fm-item-name">${fabric.name}</span>
-        <span class="fm-item-tag">${fabric.tag}</span>
-      </div>
-      <svg style="width:12px;height:12px;fill:currentColor;flex-shrink:0;opacity:.35"><use href="#ico-arrow"/></svg>
-    </button>`).join('');
-}
-function filterFabricMenu(q){
-  const term=q.toLowerCase();
-  document.querySelectorAll('.fm-item').forEach(el=>{
-    el.style.display=el.dataset.name.toLowerCase().includes(term)?'':'none';
-  });
-}
-function openFabricMenu(){
-  document.getElementById('fmDrawer').classList.add('fm-drawer--open');
-  document.getElementById('fmOverlay').classList.add('fm-overlay--show');
-  document.getElementById('fmSearch').value=''; filterFabricMenu('');
-}
-function closeFabricMenu(){
-  document.getElementById('fmDrawer').classList.remove('fm-drawer--open');
-  document.getElementById('fmOverlay').classList.remove('fm-overlay--show');
-}
-function goToFabric(key){
-  closeFabricMenu();
-  if(isMobileView){const idx=mobilePages.findIndex(p=>p.key===key);if(idx!==-1)renderMobile(idx);}
-  else{for(let i=0;i<pages.length;i++){if(pages[i].key===key&&pages[i].type==='fabric-intro'){renderSpread(Math.floor(i/2));break;}}}
-}
-
-/* ── PROGRESSO CLICÁVEL ── */
-function jumpFromProgress(e){
-  const bar=document.getElementById('brProgressBar');
-  const rect=bar.getBoundingClientRect();
-  const pct=Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width));
-  const total=isMobileView?mobilePages.length:totalSpreads;
-  const target=Math.round(pct*(total-1));
-  if(isMobileView)renderMobile(target); else renderSpread(target);
-}
-
-/* ── INPUT DE PÁGINA ── */
-let _cpit=null;
-function togglePageInput(){
-  const jump=document.getElementById('brPageJump');
-  if(jump.classList.contains('br-page-jump--open')){closePageInput();return;}
-  const total=isMobileView?mobilePages.length:totalSpreads;
-  const inp=document.getElementById('brPageInput');
-  inp.max=total; inp.value=isMobileView?mobilePage+1:currentSpread+1;
-  jump.classList.add('br-page-jump--open');
-  setTimeout(()=>{inp.focus();inp.select();},30);
-}
-function closePageInput(){document.getElementById('brPageJump').classList.remove('br-page-jump--open');}
-function closePageInputDelay(){_cpit=setTimeout(closePageInput,200);}
-function commitPageInput(){
-  if(_cpit){clearTimeout(_cpit);_cpit=null;}
-  const val=parseInt(document.getElementById('brPageInput').value);
-  const total=isMobileView?mobilePages.length:totalSpreads;
-  if(!isNaN(val)&&val>=1&&val<=total){if(isMobileView)renderMobile(val-1);else renderSpread(val-1);}
-  closePageInput();
-}
-function pageInputKey(e){if(e.key==='Enter'){e.preventDefault();commitPageInput();}if(e.key==='Escape')closePageInput();}
-
-/* ── ZOOM LIGHTBOX ── */
-let zScale=1,zOffX=0,zOffY=0,zDrag=false,zDragSX=0,zDragSY=0,zDragOX=0,zDragOY=0,zTouchD=0;
-function openZoom(src){
-  const img=document.getElementById('zoomImg');
-  img.src=src; img.style.transition='none'; img.style.transform='translate(0,0) scale(1)';
-  zScale=1;zOffX=0;zOffY=0;
-  document.getElementById('zoomVal').textContent='100%';
-  document.getElementById('zoomOverlay').classList.add('zoom-overlay--open');
-  const hint=document.getElementById('zoomHint');
-  hint.style.opacity='1'; clearTimeout(hint._t);
-  hint._t=setTimeout(()=>hint.style.opacity='0',3000);
-}
-function closeZoom(){document.getElementById('zoomOverlay').classList.remove('zoom-overlay--open');}
-function applyZoom(animate){
-  const img=document.getElementById('zoomImg');
-  img.style.transition=animate?'transform 0.2s ease':'none';
-  img.style.transform=`translate(${zOffX}px,${zOffY}px) scale(${zScale})`;
-  document.getElementById('zoomVal').textContent=Math.round(zScale*100)+'%';
-}
-function resetZoom(){zScale=1;zOffX=0;zOffY=0;applyZoom(true);}
-function zoomStep(d){zScale=Math.max(0.5,Math.min(5,zScale+d));if(zScale<=1){zOffX=0;zOffY=0;}applyZoom(true);}
-document.getElementById('zoomOverlay').addEventListener('wheel',e=>{
-  if(!document.getElementById('zoomOverlay').classList.contains('zoom-overlay--open'))return;
-  e.preventDefault();
-  const d=e.deltaY<0?0.15:-0.15;
-  zScale=Math.max(0.5,Math.min(5,zScale+d));
-  if(zScale<=1){zOffX=0;zOffY=0;} applyZoom(false);
-},{passive:false});
-document.getElementById('zoomOverlay').addEventListener('click',e=>{
-  if(e.target===document.getElementById('zoomOverlay'))closeZoom();
-});
-document.getElementById('zoomStage').addEventListener('dblclick',e=>{
-  if(zScale>1)resetZoom(); else{zScale=2.5;applyZoom(true);}
-  e.stopPropagation();
-});
-document.getElementById('zoomStage').addEventListener('mousedown',e=>{
-  if(zScale<=1)return; e.preventDefault();
-  zDrag=true;zDragSX=e.clientX;zDragSY=e.clientY;zDragOX=zOffX;zDragOY=zOffY;
-  document.getElementById('zoomStage').style.cursor='grabbing';
-});
-document.addEventListener('mousemove',e=>{
-  if(!zDrag)return;
-  zOffX=zDragOX+(e.clientX-zDragSX);zOffY=zDragOY+(e.clientY-zDragSY);applyZoom(false);
-});
-document.addEventListener('mouseup',()=>{
-  if(!zDrag)return;zDrag=false;
-  document.getElementById('zoomStage').style.cursor=zScale>1?'grab':'zoom-in';
-});
-document.getElementById('zoomStage').addEventListener('touchstart',e=>{
-  if(e.touches.length===2)zTouchD=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-},{passive:true});
-document.getElementById('zoomStage').addEventListener('touchmove',e=>{
-  if(e.touches.length===2){
-    const d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-    zScale=Math.max(0.5,Math.min(5,zScale+(d-zTouchD)/180));
-    zTouchD=d; if(zScale<=1){zOffX=0;zOffY=0;} applyZoom(false); e.preventDefault();
-  }
-},{passive:false});
-
-/* ── TECLADO ── */
-document.addEventListener('keydown',e=>{
-  if(document.getElementById('zoomOverlay').classList.contains('zoom-overlay--open')){
-    if(e.key==='Escape')closeZoom();
-    if(e.key==='+'||e.key==='=')zoomStep(0.3);
-    if(e.key==='-')zoomStep(-0.3);
-    if(e.key==='0')resetZoom();
-    return;
-  }
-  if(document.getElementById('reader').style.display==='none')return;
-  if(document.getElementById('brPageJump').classList.contains('br-page-jump--open'))return;
-  if(e.key==='ArrowRight'||e.key==='ArrowDown')nextPage();
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp')prevPage();
-  if(e.key==='Escape')closeBook();
-});
-
-/* ── SWIPE ── */
-let tSX=0,tSY=0;
-document.getElementById('reader').addEventListener('touchstart',e=>{tSX=e.touches[0].clientX;tSY=e.touches[0].clientY;},{passive:true});
-document.getElementById('reader').addEventListener('touchend',e=>{
-  if(document.getElementById('zoomOverlay').classList.contains('zoom-overlay--open'))return;
-  const dx=e.changedTouches[0].clientX-tSX,dy=e.changedTouches[0].clientY-tSY;
-  if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){if(dx<0)nextPage();else prevPage();}
-},{passive:true});
-
-/* ── RESIZE ── */
-let rT;
-window.addEventListener('resize',()=>{
-  clearTimeout(rT);rT=setTimeout(()=>{
-    const was=isMobileView;checkMobile();
-    if(activeCategory&&was!==isMobileView){
-      if(isMobileView)renderMobile(mobilePage);
-      else{document.getElementById('pageLeft').style.display='';document.getElementById('pageRight').style.width='';renderSpread(currentSpread);}
-    }
-  },200);
-});
-
-/* ── RETORNO AO CATÁLOGO (botão X) ── */
-let _returnFabricKey = null;
-function returnToCatalog(){
-  const v = sessionStorage.getItem('vendedor');
-  const vParam = v ? '&vendedor=' + encodeURIComponent(v) : '';
-  if(_returnFabricKey) window.location.href = 'index.html?fabric=' + encodeURIComponent(_returnFabricKey) + vParam;
-  else window.location.href = 'index.html' + (v ? '?vendedor=' + encodeURIComponent(v) : '');
-}
-
-/* ── URL PARAMS ── */
-window.addEventListener('DOMContentLoaded',()=>{
-  const params=new URLSearchParams(location.search);
-  const cat=params.get('category'),fabric=params.get('fabric');
-  /* Mostrar botão X somente quando veio via ?fabric= do catálogo */
-  if(fabric){
-    _returnFabricKey = fabric;
-    const btn = document.getElementById('btnReturnCatalog');
-    if(btn){ btn.style.display='flex'; }
-  }
-  if(cat)openBook(cat,fabric||null);
-
-  // Close dropbox menu when clicking outside
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#blDropboxWrap')) closeDropboxMenu();
-  });
-
-  // ── SISTEMA DE VENDEDORES ──
-  initVendedor();
-});
-
-function toggleDropboxMenu(){
-  const btn=document.getElementById('blDropboxBtn');
-  const menu=document.getElementById('blDropboxMenu');
-  const isOpen=menu.classList.contains('open');
-  if(isOpen){closeDropboxMenu();}else{menu.classList.add('open');btn.classList.add('open');}
-}
-function closeDropboxMenu(){
-  document.getElementById('blDropboxMenu')?.classList.remove('open');
-  document.getElementById('blDropboxBtn')?.classList.remove('open');
-}
-
-/* ══════════════════════════════════════════════════════════════
-   SISTEMA DE VENDEDORES — edite apenas este bloco
-   ══════════════════════════════════════════════════════════════
-   Para adicionar/editar vendedores, altere o objeto VENDEDORES.
-   A chave é o que aparece na URL: ?vendedor=CHAVE
-   Para links curtos use o arquivo de redirecionamento: CHAVE.html
-   ══════════════════════════════════════════════════════════════ */
-const VENDEDORES = {
-  vinicius:  { nome: 'Vinicius',  tel: '5511919050956' }, // troque pelo número real
-  mikael: { nome: 'Mikael', tel: '5511934527816' }, // troque pelo número real
-  ricardo:   { nome: 'Ricardo',   tel: '5511949492913' }, // troque pelo número real
-  heitor:   { nome: 'Heitor',    tel: '5511955841996' }, // troque pelo número real
-  junior:   { nome: 'Junior',    tel: '5511988245385' }, // troque pelo número real
-  giuliano:  { nome: 'Giuliano',  tel: '5511932124107' }, // troque pelo número real
-  mara:    { nome: 'Mara',      tel: '5511914932913' }, // troque pelo número real
-
-};
-const WPP_DEFAULT_TEL  = '5511957717470';
-const WPP_DEFAULT_NOME = 'Lucas Cardillo';
-
-function initVendedor() {
-  // 1. Lê o param da URL
-  const params = new URLSearchParams(location.search);
-  const keyURL = (params.get('vendedor') || '').toLowerCase().trim();
-
-  // 2. Persiste no sessionStorage (mantém ao navegar entre páginas)
-  if (keyURL) sessionStorage.setItem('vendedor', keyURL);
-  const key = keyURL || (sessionStorage.getItem('vendedor') || '').toLowerCase().trim();
-
-  // 3. Resolve vendedor
-  const v = VENDEDORES[key] || { nome: WPP_DEFAULT_NOME, tel: WPP_DEFAULT_TEL };
-
-  // 4. Mensagem padrão
-  const msg = v.nome
-    ? `Olá%20${encodeURIComponent(v.nome)}!%20Vi%20o%20catálogo%20da%20Alfa%20%26%20Levy%20e%20gostaria%20de%20saber%20mais.`
-    : `Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos.`;
-
-  // 5. Atualiza todos os links wa.me da página
-  document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
-    a.href = `https://wa.me/${v.tel}?text=${msg}`;
-  });
-
-  // 6. Atualiza botão flutuante
-  const floatBtn = document.getElementById('wppFloat');
-  if (floatBtn) floatBtn.href = `https://wa.me/${v.tel}?text=${msg}`;
-
-  // 7. Propaga ?vendedor= nos links internos (index.html)
-  if (key) {
-    document.querySelectorAll('a[href*="index.html"]').forEach(a => {
-      try {
-        const u = new URL(a.href, location.href);
-        u.searchParams.set('vendedor', key);
-        a.href = u.toString();
-      } catch(e){}
-    });
-  }
-}
-</script>
-
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<style>
- .wpp-float{
-  position:fixed;bottom:28px;left:24px;z-index:999;
-  display:inline-flex;align-items:center;gap:10px;
-  background:#25D366;color:#fff;text-decoration:none;
-  padding:12px 20px 12px 16px;
-  border-radius:50px;
-  box-shadow:0 4px 24px rgba(37,211,102,0.35),0 2px 8px rgba(0,0,0,0.3);
-  font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  transition:all 0.3s;
-  max-width:52px;overflow:hidden;
-  white-space:nowrap;
-}
-.wpp-float svg{width:22px;height:22px;fill:currentColor;flex-shrink:0;}
-.wpp-float-label{opacity:0;transform:translateX(-6px);transition:opacity 0.3s,transform 0.3s;pointer-events:none;}
-.wpp-float:hover{max-width:220px;padding-right:24px;box-shadow:0 6px 32px rgba(37,211,102,0.5),0 2px 12px rgba(0,0,0,0.3);}
-.wpp-float:hover .wpp-float-label{opacity:1;transform:translateX(0);}
-@media(max-width:480px){.wpp-float{bottom:20px;left:16px;}}
-</style>
-<a id="wppFloat" href="https://wa.me/5511957717470?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos." target="_blank" class="wpp-float" title="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- ═══════════════════════════════════════
+     BOTÃO FLUTUANTE WHATSAPP
+     (igual ao index.html — atualiza com o tecido atual)
+════════════════════════════════════════ -->
+<a id="wppFloat"
+   href="https://wa.me/5511957717470?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tecidos."
+   target="_blank" class="wpp-float" title="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span class="wpp-float-label">Fale Conosco</span>
 </a>
+
+
+<!-- ═══════════════════════════════════════
+     SCRIPTS — ordem importa!
+     1. Dados do book (BOOK_DATA + WASH_DATA)
+     2. Lógica principal do book
+     3. Vendedores (deve vir por último para sobrescrever links wa.me)
+════════════════════════════════════════ -->
+<script src="js/book-data.js"></script>
+<script src="js/book-main.js"></script>
+<script src="js/vendedores.js"></script>
 
 </body>
 </html>
