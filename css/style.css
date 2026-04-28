@@ -341,8 +341,28 @@ footer ul li a:hover{color:var(--cream);}
   padding-top: 10px;
 }
 
-.fabric-modal-cover{position:relative;overflow:hidden;aspect-ratio:3/4;background:#2a1a0e;margin-top:25px;}
-.fabric-modal-cover img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border:1px solid rgba(139,69,200,0.2);}
+/* ── Capa do modal ── */
+.fabric-modal-cover{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;background:#2a1a0e;margin-top:25px;
+  cursor:crosshair;
+}
+.fabric-modal-cover img{
+  width:100%;height:100%;object-fit:contain;object-position:center;
+  display:block;border:1px solid rgba(139,69,200,0.2);
+  pointer-events:none;
+}
+/* ── Lente de zoom (criada via JS) ── */
+.zoom-lens{
+  display:none;
+  position:absolute;
+  pointer-events:none;
+  background-repeat:no-repeat;
+  border:2px solid rgba(200,160,58,0.75);
+  border-radius:4px;
+  box-shadow:0 6px 24px rgba(0,0,0,0.55);
+  z-index:10;
+}
 
 
 /* ⬇️ Ajustando as cores do texto para o fundo claro */
@@ -409,22 +429,105 @@ footer ul li a:hover{color:var(--cream);}
   margin-left: 12px;
 }
 
+/* ── Grid padrão (fotos / variações) ── */
 .fabric-modal-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
   gap:3px;
 }
+/* Grid compacto para chips de cor */
+.fabric-modal-grid.grid-chips{
+  grid-template-columns:repeat(auto-fill,minmax(90px,1fr));
+  gap:8px;
+}
+
+/* ── Swatch com FOTO (estampados / variações) ── */
 .fabric-modal-swatch{
   position:relative;overflow:hidden;cursor:zoom-in;
-  aspect-ratio:3/4;background:var(--grape);
+  aspect-ratio:3/4;background:var(--grape);border-radius:3px;
 }
 .fabric-modal-swatch img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
 .fabric-modal-swatch:hover img{transform:scale(1.08);}
 .fabric-modal-swatch-n{
   position:absolute;bottom:0;left:0;right:0;
   padding:10px 10px 8px;
-  background:linear-gradient(to top,rgba(10, 4, 19, 0.438),transparent);
-  font-size:13px;letter-spacing:2px;text-transform:uppercase;color:rgba(250, 246, 255, 0.788);
+  background:linear-gradient(to top,rgba(10,4,19,0.55),transparent);
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(250,246,255,0.85);
+}
+
+/* ── Color Chip (sem foto) ── */
+.color-chip{
+  display:flex;flex-direction:column;
+  border-radius:3px;overflow:hidden;
+  border:1px solid rgba(0,0,0,0.08);
+  cursor:default;
+  position:relative;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.color-chip:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  z-index:2;
+}
+
+/* Bloco de cor */
+.color-chip-block{
+  display:block;
+  width:100%;
+  aspect-ratio:3/2;
+}
+/* Branco precisa de borda interna visível */
+.color-chip-block[style*="#fff"],
+.color-chip-block[style*="#FFF"],
+.color-chip-block[style*="#ffffff"],
+.color-chip-block[style*="#FFFFFF"]{
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,0.12);
+}
+
+/* Label fixo abaixo do chip */
+.color-chip-label{
+  background:#f0eae0;
+  padding:4px 5px;
+  font-size:8.5px;letter-spacing:1px;text-transform:uppercase;
+  color:#3a2a1a;text-align:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  line-height:1.3;
+}
+
+/* Tooltip no hover — aparece acima, igual Rosset */
+.color-chip::before{
+  content: attr(data-name);
+  position:absolute;
+  bottom: calc(100% + 6px);
+  left:50%;transform:translateX(-50%);
+  background:rgba(14,8,24,0.92);
+  color:#fff;
+  font-family:'Jost',sans-serif;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  white-space:nowrap;
+  padding:5px 10px;
+  border-radius:2px;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.18s;
+  z-index:20;
+}
+.color-chip::after{
+  content:'';
+  position:absolute;
+  bottom:calc(100% + 2px);
+  left:50%;transform:translateX(-50%);
+  border:4px solid transparent;
+  border-top-color:rgba(14,8,24,0.92);
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.18s;
+  z-index:20;
+}
+.color-chip:hover::before,
+.color-chip:hover::after{
+  opacity:1;
 }
 
 /* lightbox */
