@@ -675,7 +675,7 @@ footer ul li a:hover{color:var(--cream);}
   aspect-ratio: 1; /* Quadradas */
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.041);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 /* ── INFORMAÇÕES TÉCNICAS (Specs) ── */
