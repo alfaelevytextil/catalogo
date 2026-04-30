@@ -144,6 +144,14 @@ const WASH_DATA = {
     {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
     {img:'images/lavagem/UMIDO.jpg',                 label:'LIMPEZA A ÚMIDO'},
   ],
+  LUNA: [
+    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
+    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
+    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
+    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
+    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
+    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR NA HORIZONTAL'},
+  ],
 
   // ── TRAMAS ───────────────────────────────────────────────────
   MACRAME:        [...WASH_DEFAULT],
