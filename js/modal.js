@@ -125,6 +125,7 @@ function renderColorGrid(f, key) {
     return;
   }
 
+
   // Sem colors e sem pages extras → esconde seção
   grid.classList.remove('grid-chips');
   const colorPages = (f.pages || 1) - 1;
