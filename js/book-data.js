@@ -16,12 +16,20 @@
 
 const BOOK_DATA = {
   // ── LISOS ────────────────────────────────────────────────────
+  CIRRE:                  { name:'Cirré',                  category:'LISOS',        tag:'Moda Praia · Moda Casual',           bookPages:2 },
+  DRY_FIT:                 { name:'Dry Fit',                 category:'LISOS',        tag:'Fitness · Esportivo',             bookPages:2 },
+  DRY_SPORT:                { name:'Dry Sport',              category:'LISOS',        tag:'Fitness · Esportivo',             bookPages:2 },
+  FORRO_COLMEIA:            { name:'Forro Colmeia',         category:'LISOS',        tag:'Forro · Moda Praia',              bookPages:2 },
+  FORRO_TRADICIONAL:        { name:'Forro Tradicional',     category:'LISOS',        tag:'Forro · Moda Praia',              bookPages:2 },
   LIRUS:                  { name:'Lirus',                  category:'LISOS',        tag:'Fitness · Moda Casual',           bookPages:2 },
+  LUNA:                   { name:'Luna',                   category:'LISOS',        tag:'Moda Praia · Moda Casual',           bookPages:2 },
   NEW_TRIP:               { name:'New Trip',               category:'LISOS',        tag:'Fitness · Moda Casual',           bookPages:2 },
+  SANTA_CONSTANCIA:         { name:'Light Santa Constância',      category:'LISOS',        tag:'Moda Praia · Moda Casual',           bookPages:2 },
 
   // ── TRAMAS ───────────────────────────────────────────────────
   MACRAME:                { name:'Macramê',                category:'TRAMAS',       tag:'Moda Praia · Moda',               bookPages:2 },
   MACRAME_PALMER:         { name:'Macramê Franja Palmer',  category:'TRAMAS',       tag:'Moda Praia · Moda Casual',        bookPages:2 },
+  TELA_FIT_POLIESTER:       { name:'Tela Fit Poliéster',     category:'TRAMAS',       tag:'Fitness · Esportivo',             bookPages:2 },
 
   // ── TEXTURIZADOS ─────────────────────────────────────────────
   ANARRUGA_BRILHANTE:     { name:'Anarruga Brilhante',     category:'TEXTURIZADOS', tag:'Moda Praia · Lingerie',           bookPages:2 },
@@ -100,193 +108,4 @@ const BOOK_DATA = {
    ÍCONES DE LAVAGEM PADRÃO
    Disponíveis em images/lavagem/
    ───────────────────────────────────────────────────────────── */
-const WASH_DEFAULT = [
-  {img:'images/lavagem/LAVAGEM-MANUAL.jpg',         label:'LAVAR DE FORMA MANUAL'},
-  {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg',  label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-  {img:'images/lavagem/NAO-LAVAR-SECO.jpg',         label:'NÃO LAVAR A SECO'},
-  {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',     label:'NÃO SECAR EM MÁQUINA SECADORA'},
-  {img:'images/lavagem/NAO-PASSAR.jpg',             label:'NÃO PASSAR'},
-  {img:'images/lavagem/SECAR-VARAL.jpg',            label:'SECAR EM VARAL, À SOMBRA'},
-  {img:'images/lavagem/MAX-30-1.jpg',               label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-  {img:'images/lavagem/MAX-40.jpg',                 label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
-  {img:'images/lavagem/SECAR-MIN.jpg',              label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-  {img:'images/lavagem/UMIDO.jpg',                  label:'LIMPEZA A ÚMIDO'},
-  {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',       label:'NÃO LIMPAR A ÚMIDO'},
-];
-
-/* ─────────────────────────────────────────────────────────────
-   ÍCONES DE LAVAGEM POR TECIDO
-   Para usar o padrão → [...WASH_DEFAULT]
-   Para personalizar → substitua pelo array desejado
-
-   Ícones disponíveis em images/lavagem/:
-   LAVAGEM-MANUAL.jpg · NAO-ALVEJAR-BRANQUEAR.jpg · NAO-LAVAR-SECO.jpg
-   NAO-SECAR-SECADORA.jpg · NAO-PASSAR.jpg · SECAR-VARAL.jpg
-   MAX-30-1.jpg · MAX-40.jpg · SECAR-MIN.jpg · UMIDO.jpg
-   NAO-LIMPAR-UMIDO.jpg · PASSAR-MAX-100.jpg · SECAR-HORIZONTAL.jpg
-   ───────────────────────────────────────────────────────────── */
-const WASH_DATA = {
-  // ── LISOS ────────────────────────────────────────────────────
-  LIRUS: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR NA HORIZONTAL'},
-  ],
-  NEW_TRIP: [
-    {img:'images/lavagem/MAX-30-1.jpg',              label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/SECAR-MIN.jpg',             label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/UMIDO.jpg',                 label:'LIMPEZA A ÚMIDO'},
-  ],
-  LUNA: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR NA HORIZONTAL'},
-  ],
-
-  // ── TRAMAS ───────────────────────────────────────────────────
-  MACRAME:        [...WASH_DEFAULT],
-  MACRAME_PALMER: [
-    {img:'images/lavagem/MAX-40.jpg',                label:'LAVAR EM TEMPERATURA MÁX. 40°C, NORMAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/PASSAR-MAX-100.jpg',        label:'PASSAR EM TEMPERATURA MÁX. 100°C'},
-    {img:'images/lavagem/SECAR-HORIZONTAL.jpg',      label:'SECAR NA HORIZONTAL'},
-    {img:'images/lavagem/NAO-LIMPAR-UMIDO.jpg',      label:'NÃO LIMPAR A ÚMIDO'},
-  ],
-
-  // ── TEXTURIZADOS ─────────────────────────────────────────────
-  ANARRUGA_BRILHANTE:     [...WASH_DEFAULT],
-  ANARRUGA_PRAIA:         [...WASH_DEFAULT],
-  AREZZO:                 [...WASH_DEFAULT],
-  BOUCLE:                 [...WASH_DEFAULT],
-  BOUCLE_NERVUS:          [...WASH_DEFAULT],
-  BOUCLE_PETALAS:         [...WASH_DEFAULT],
-  CANCUN:                 [...WASH_DEFAULT],
-  CANELADO_BLACKOUT:      [...WASH_DEFAULT],
-  CANELADO_DE_COMPRESSAO: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-HORIZONTAL.jpg',      label:'SECAR NA HORIZONTAL'},
-  ],
-  CANELADO_DIAGONAL:      [...WASH_DEFAULT],
-  CANELADO_EDEN:          [...WASH_DEFAULT],
-  CANELADO_FUJI: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-HORIZONTAL.jpg',      label:'SECAR NA HORIZONTAL'},
-  ],
-  CANELADO_LENATEX:       [...WASH_DEFAULT],
-  CANELADO_PILLE: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-HORIZONTAL.jpg',      label:'SECAR NA HORIZONTAL'},
-  ],
-  CANELADO_POLIESTER:     [...WASH_DEFAULT],
-  CANELADO_POWER:         [...WASH_DEFAULT],
-  CANELADO_TREND_MOVE: [
-    {img:'images/lavagem/MAX-30-1.jpg',              label:'LAVAR EM TEMPERATURA MÁX. 30°C, SUAVE'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/SECAR-MIN.jpg',             label:'POSSIVÉL SECAR EM MÁQUINA, TEMPERATURA BAIXA'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/UMIDO.jpg',                 label:'LIMPEZA A ÚMIDO'},
-  ],
-  CANELADO_WONDER:        [...WASH_DEFAULT],
-  CARMEL:                 [...WASH_DEFAULT],
-  CREPINHO:               [...WASH_DEFAULT],
-  CREPONADO:              [...WASH_DEFAULT],
-  CROCHE_SANTORINI:       [...WASH_DEFAULT],
-  CROCHETE: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/PASSAR-MAX-100.jpg',        label:'PASSAR EM TEMPERATURA MÁX. 110°C'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-  ],
-  CRUNCH_LISTRADO:        [...WASH_DEFAULT],
-  CRUNCH_POA: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-  ],
-  DIAMOND:                [...WASH_DEFAULT],
-  DOTS:                   [...WASH_DEFAULT],
-  JACQUARD_BROCADO:       [...WASH_DEFAULT],
-  JACQUARD_CONCHAS:       [...WASH_DEFAULT],
-  JACQUARD_CONCHINHAS:    [...WASH_DEFAULT],
-  JACQUARD_DEGRADE:       [...WASH_DEFAULT],
-  JACQUARD_GITA:          [...WASH_DEFAULT],
-  JACQUARD_KASHIMIR:      [...WASH_DEFAULT],
-  JACQUARD_LEAF:          [...WASH_DEFAULT],
-  JACQUARD_LINES:         [...WASH_DEFAULT],
-  JACQUARD_NILO:          [...WASH_DEFAULT],
-  JACQUARD_ONCA:          [...WASH_DEFAULT],
-  JACQUARD_PIQUET:        [...WASH_DEFAULT],
-  JACQUARD_WINNER:        [...WASH_DEFAULT],
-  JACQUARD_YAHALOM:       [...WASH_DEFAULT],
-  JACQUARD_ZIGZAG_PUZZLE: [...WASH_DEFAULT],
-  LASTEX_GLOSS:           [...WASH_DEFAULT],
-  LASTEX_LIGHT:           [...WASH_DEFAULT],
-  LIS:                    [...WASH_DEFAULT],
-  LUREX_3_DOURADO:        [...WASH_DEFAULT],
-  LUREX_3_PRATA:          [...WASH_DEFAULT],
-  LUREX_4_E_OUTROS:       [...WASH_DEFAULT],
-  LUX_DUBAI:              [...WASH_DEFAULT],
-  LYCRA_JEANS:            [...WASH_DEFAULT],
-  MALIBU:                 [...WASH_DEFAULT],
-  MALTE: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-  ],
-  MARRAKESH:              [...WASH_DEFAULT],
-  MARSELHA:               [...WASH_DEFAULT],
-  MONTANA:                [...WASH_DEFAULT],
-  POINTS:                 [...WASH_DEFAULT],
-  POSITANO:               [...WASH_DEFAULT],
-  ROCKS:                  [...WASH_DEFAULT],
-  SAINT_MARTIN:           [...WASH_DEFAULT],
-  SEREIA:                 [...WASH_DEFAULT],
-  SUKUZA:                 [...WASH_DEFAULT],
-  TEXAS:                  [...WASH_DEFAULT],
-  VERONA: [
-    {img:'images/lavagem/LAVAGEM-MANUAL.jpg',        label:'LAVAR DE FORMA MANUAL'},
-    {img:'images/lavagem/NAO-ALVEJAR-BRANQUEAR.jpg', label:'NÃO ALVEJAR, NÃO BRANQUEAR'},
-    {img:'images/lavagem/NAO-LAVAR-SECO.jpg',        label:'NÃO LAVAR A SECO'},
-    {img:'images/lavagem/NAO-SECAR-SECADORA.jpg',    label:'NÃO SECAR EM MÁQUINA SECADORA'},
-    {img:'images/lavagem/NAO-PASSAR.jpg',            label:'NÃO PASSAR'},
-    {img:'images/lavagem/SECAR-VARAL.jpg',           label:'SECAR EM VARAL, À SOMBRA'},
-  ],
-
-  // ── ESTAMPADOS ───────────────────────────────────────────────
-  SARDINHA:               [...WASH_DEFAULT],
-  SARDINHAS:              [...WASH_DEFAULT],
-};
+/* WASH_DATA moved to js/wash-data.js */

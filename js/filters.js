@@ -26,7 +26,7 @@ function applyFilters() {
   );
 
   const segValues = allChecks
-    .filter(c => ['Moda Praia','Fitness','Lingerie','Moda Casual','Moda'].includes(c.value))
+    .filter(c => ['Moda Praia','Fitness','Lingerie','Moda Casual','Moda','Forro'].includes(c.value))
     .map(c => c.value);
 
   const catValues = allChecks

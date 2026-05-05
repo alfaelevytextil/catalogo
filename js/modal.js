@@ -24,7 +24,64 @@ function renderAttrIcons(list) {
     return `<div class="attr-icon-wrap"><img src="images/icons/${attr}" alt="${label}"></div>`;
   }).join('');
 }
+function normalizeHex(value) {
+  if (!value) return '';
+  return value.toString().trim().toLowerCase().replace(/[^0-9a-f]/g, '');
+}
 
+function findSupplierEntry(palette, candidate) {
+  if (!palette || !palette.length || !candidate) return null;
+  const needle = candidate.toString().trim().toLowerCase();
+  const needleHex = normalizeHex(candidate);
+
+  return palette.find(entry => {
+    if (entry.hex && normalizeHex(entry.hex) === needleHex) return true;
+    if (entry.code && entry.code.toString().trim().toLowerCase() === needle) return true;
+    if (entry.name && entry.name.toString().trim().toLowerCase() === needle) return true;
+    if (entry.code && entry.name) {
+      const combined = `${entry.code} ${entry.name}`.trim().toLowerCase();
+      if (combined === needle) return true;
+    }
+    return false;
+  }) || null;
+}
+
+function resolveSupplierColors(f) {
+  if (!f || !f.supplier) return;
+  const palette = (window.SUPPLIER_COLOR_PALETTES || {})[f.supplier];
+  if (!Array.isArray(palette) || !palette.length) return;
+
+  if (!Array.isArray(f.colors) || f.colors.length === 0) {
+    if (Array.isArray(f.supplierColors) && f.supplierColors.length) {
+      f.colors = f.supplierColors.map(item => {
+        if (typeof item === 'string') {
+          const match = findSupplierEntry(palette, item);
+          return match ? { ...match } : { name: item };
+        }
+        const itemKey = item.name || item.code || item.hex;
+        const match = findSupplierEntry(palette, itemKey);
+        return match ? { ...match, ...item } : item;
+      }).filter(Boolean);
+    }
+  }
+
+  if (!Array.isArray(f.colors)) return;
+
+  f.colors = f.colors.map(color => {
+    const current = typeof color === 'string' ? { name: color } : { ...color };
+    const match = findSupplierEntry(palette, current.hex || current.name || current.code);
+    if (match) {
+      return {
+        ...match,
+        ...current,
+        hex: current.hex || match.hex,
+        name: current.name || match.name,
+        code: current.code || match.code,
+      };
+    }
+    return current;
+  });
+}
 /* ═══════════════════════════════════════════════════════════════
    ZOOM DE LENTE — segue o mouse na foto de capa
    ═══════════════════════════════════════════════════════════════ */
@@ -99,6 +156,8 @@ function renderColorGrid(f, key) {
   grid.innerHTML      = '';
   currentLightboxImages = [];
 
+  resolveSupplierColors(f);
+
   /* ── MODO 1: color chips (f.colors definido) ── */
   if (f.colors && f.colors.length > 0) {
     document.getElementById('fabricColorTitle').childNodes[0].textContent = (f.colorsTitle || 'Cores Disponíveis') + ' ';
@@ -115,8 +174,12 @@ function renderColorGrid(f, key) {
       chip.setAttribute('data-name', cor.name);
       chip.title = cor.name;
 
+      const blockStyles = Array.isArray(cor.hex)
+        ? `background: linear-gradient(90deg, ${cor.hex[0]} 50%, ${cor.hex[1]} 50%);`
+        : `background: ${cor.hex};`;
+
       chip.innerHTML = `
-        <span class="color-chip-block" style="background:${cor.hex}"></span>
+        <span class="color-chip-block" style="${blockStyles}"></span>
         <span class="color-chip-label">${cor.name}</span>
       `;
       grid.appendChild(chip);
