@@ -1,5 +1,19 @@
 /* Auto-gerado: dados de tecidos LISOS */
 const FABRICS_LISOS = {
+
+ATLETIKA: {
+    name: 'Atletika', category: 'LISOS', tag: '',
+    previewColors: [],
+    desc: '',
+    pages: 1, colorsTitle: 'Cores Disponíveis',
+    colors: [
+
+    ],
+    largura: '', rendimento: '', gramatura: '', composicao: '',
+    attributes: [],
+    bookUrl: 'book.html?fabric=ATLETIKA'
+  },
+
   CIRRE: {
     name: 'Cirré', category: 'LISOS', tag: 'Moda Praia · Moda Casual', supplier: 'ROSSET',
     previewColors: ['#0f1c2e', '#8a7668', '#2a408f', '#000000', '#e3307b', '#FFFFFF', '#87CEEB'],
@@ -349,6 +363,84 @@ SANTA_CONSTANCIA: {
     largura: '1,60m', rendimento: '4,57m/kg', gramatura: '135g/m²', composicao: '91% Poliamida, 9% Elastano',
     attributes: ['02.PRAIA2.jpg','04.MODA.jpg','05.TOQUE-MACIO.jpg','13.ELASTICIDADE1.jpg'],
     bookUrl: 'book.html?fabric=LUNA',
+  },
+
+  SATURNO: {
+    name: 'Saturno', category: 'LISOS', tag: 'Moda Praia · Moda Casual', supplier: 'SPA',
+    previewColors: ['#afc9c9', '#a5d5d5', '#68b4cc', '#6782b9', '#4d9f9b', '#498eeb', '#2d62c8', '#006195', '#00357f', '#003856', '#12204d', '#83a39e', '#9ea18a', '#41645d', '#94c335', '#4ec777', '#7E8F3A', '#01864d', '#2e3726', '#fff7c9', '#e7d54f', '#dfda38', '#f6e597', '#bd7545', '#c9663c', '#e26543', '#9a7002', '#a26302', '#b94c0b', '#c9184c', '#b21435', '#7d241c', '#f0d4d6', '#e3d0cc', '#eccbd3', '#fe97c4', '#BE8A87', '#b85d80', '#b7316e', '#baabc4', '#9283f1', '#8060c7', '#758ab5', '#6b6781', '#652562'],
+    desc: 'Malha de poliamida opaca com elastano, a Saturno é a escolha perfeita para quem busca conforto e estilo em peças de moda praia e casual. Com toque macio e excelente elasticidade, oferece um caimento fluido e confortável, ideal para saídas de praia, vestidos e peças casuais. Sua composição garante durabilidade e resistência, mantendo a qualidade mesmo após várias lavagens. Disponível em uma variedade de cores vibrantes e neutras, a Saturno é versátil para diversas criações.',
+    pages: 1, colorsTitle: 'Cores Disponíveis',
+    colors: [
+      { name: 'Moody Blue',  hex: '#afc9c9' },
+      { name: 'Aquifir', hex: '#a5d5d5' },
+      { name: 'Waterslide',   hex: '#68b4cc' },
+      { name: 'Acqua', hex: '#68b4cc' },
+      { name: 'Frozen', hex: '#6782b9' },
+      { name: 'Acqua Rush', hex: '#6782b9' },
+      { name: 'Azul Bertie', hex: '#4d9f9b' },
+      { name: 'Campanela', hex: '#498eeb' },
+      { name: 'Palace Blue', hex: '#2d62c8' },
+      { name: 'Azul Maré', hex: '#006195' },
+      { name: 'Solitude Blue', hex: '#00357f' },
+      { name: 'Petroléo', hex: '#003856' },
+      { name: 'Marinho', hex: '#12204d' },
+      { name: 'Dark Florest', hex: '#83a39e' },
+      { name: 'Clay', hex: '#9ea18a' },
+      { name: 'Deep Sea', hex: '#41645d' },
+      { name: 'Jadde Lime', hex: '#94c335' },
+      { name: 'Drink', hex: '#4ec777' },
+      { name: 'Oliver', hex: '#7E8F3A' }, 
+      { name: 'Greenery', hex: '#62862c' },
+      { name: 'Oliver Brine', hex: '#524803' },
+      { name: 'Verde Flag', hex: '#01864d' },
+      { name: 'Deep Green', hex: '#2e3726' },
+      { name: 'Butter Cream', hex: '#fff7c9' },
+      { name: 'Ochre', hex: '#e7d54f' },
+      { name: 'Lemon Drop', hex: '#dfda38' },
+      { name: 'Bulbous Yellow', hex: '#f6e597' },
+      { name: 'Terracota', hex: '#bd7545' },
+      { name: 'Melon', hex: '#c9663c' },
+      { name: 'Páprika', hex: '#e26543' },
+      { name: 'Aureum', hex: '#9a7002' },
+      { name: 'Kombucha', hex: '#a26302' },
+      { name: 'Ferrugo', hex: '#b94c0b' },
+      { name: 'Rubro', hex: '#c9184c' },
+      { name: 'Vulcão', hex: '#b21435' },
+      { name: 'Glazed Cherry', hex: '#7d241c' },
+      { name: 'Romantic', hex: '#f0d4d6' },
+      { name: 'Blushed', hex: '#e3d0cc' },
+      { name: 'Spoonbill', hex: '#eccbd3' },
+      { name: 'Rosáceo', hex: '#fe97c4' },
+      { name: 'Fumê', hex: '#BE8A87' },
+      { name: 'Milkshake', hex: '#b85d80' },
+      { name: 'Fuchsia', hex: '#b7316e' },
+      { name: 'Lilac', hex: '#baabc4' },
+      { name: 'Lavanda', hex: '#9283f1' },
+      { name: 'Violet', hex: '#8060c7' },
+      { name: 'Netuno', hex: '#758ab5' },
+      { name: 'Daybreak', hex: '#6b6781' },
+      { name: 'Grape Passion', hex: '#652562' },
+      { name: 'Branco', hex: '#FFFFFF' },
+      { name: 'Off-White', hex: '#eae4d3' },
+      { name: 'Bege', hex: '#9e846b' },
+      { name: 'Nude', hex: '#856e5c' },
+      { name: 'Castanho', hex: '#75755f' },
+      { name: 'Marrom Café', hex: '#6B4A3A' },
+      { name: 'Terra', hex: '#744430' },
+      { name: 'Coffee', hex: '#473a38' },
+      { name: 'Barolo', hex: '#4b2127' },
+      { name: 'Cinza Silver', hex: '#767771' },
+      { name: 'Paint/Preto', hex: '#08090b' },
+
+      
+
+      
+      
+    
+    ],
+    largura: '1,60m', rendimento: '4,57m/kg', gramatura: '135g/m²', composicao: '91% Poliamida, 9% Elastano',
+    attributes: ['02.PRAIA2.jpg','04.MODA.jpg','05.TOQUE-MACIO.jpg','13.ELASTICIDADE1.jpg'],
+    bookUrl: 'book.html?fabric=SATURNO',
   },
 
   LYCRA_5058: {
