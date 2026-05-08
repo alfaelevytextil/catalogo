@@ -636,7 +636,7 @@ footer ul li a:hover{color:var(--cream);}
   .fabric-modal-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
   }
 
-@media(max-width:600px){
+@media(max-width:768px){
   .fabrics-grid{grid-template-columns:repeat(2,1fr);gap:2px;}
   .fabric-card{aspect-ratio:3/4;}
   .fabric-info{
@@ -651,7 +651,21 @@ footer ul li a:hover{color:var(--cream);}
     background:linear-gradient(to bottom,rgba(14,8,24,0.4) 0%,transparent 28%,transparent 62%,rgba(14,8,24,0.6) 100%) !important;
   }
   .fabric-card:hover .fabric-info{transform:none !important;}
-  .fabric-name{font-size:33px;margin-bottom:2px;line-height:1.1;padding-right: 0;}
+ /* Ajuste para o seu breakpoint */
+ .fabric-name {
+    font-size: 33px;
+    margin-bottom: 2px;
+    line-height: 1.1;
+    padding-right: 0;
+    
+    /* NOVA CORREÇÃO PARA NÃO FICAR TORTO */
+    display: block;
+    width: 100%;          /* Ocupa a largura total do card */
+    text-align: center;   /* Centraliza o texto perfeitamente */
+    max-width: none;      /* Remove o limite que estava causando o erro */
+    word-spacing: 100vw;  /* TRUQUE: Força uma quebra em cada espaço vazio */
+  }
+
   .fabric-tag{font-size:8px;letter-spacing:2px;margin-bottom:6px;}
   .fabric-desc{
     font-size:11px;line-height:1.5;
