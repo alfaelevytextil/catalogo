@@ -33,6 +33,45 @@ ATLETIKA: {
     bookUrl: 'book.html?fabric=CIRRE',
   },
 
+CORTA_VENTO_AMASSADO: {
+  name: 'Corta Vento Amassado', category: 'LISOS', tag: '', 
+  previewColors: [],
+  desc: '', 
+  pages: '', colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+  largura: '', rendimento: '', gramatura: '', composicao: '', 
+  attributes: [],
+  bookUrl: 'book.htmlfabric=CORTA_VENTO_AMASSADO'
+},
+
+CORTA_VENTO_REFLETIVO: {
+  name: 'Corta Vento Refletivo', category: 'LISOS', tag: '', 
+  previewColors: [],
+  desc: '', 
+  pages: '', colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+  largura: '', rendimento: '', gramatura: '', composicao: '', 
+  attributes: [],
+  bookUrl: 'book.htmlfabric=CORTA_VENTO_REFLETIVO'
+},
+
+DEMI: {
+  name: 'Demi Compression', category: 'LISOS', tag: '', 
+  previewColors: [],
+  desc: '', 
+  pages: '', colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+  largura: '', rendimento: '', gramatura: '', composicao: '', 
+  attributes: [],
+  bookUrl: 'book.htmlfabric=DEMI'
+},
+
 DRY_FIT: {
     name: 'Dry Fit', category: 'LISOS', tag: 'Fitness · Esportivo',
     previewColors: ['#d7f57f', '#4175ba', '#FFFFFF', '#6c757d', '#f33d58', '#f75828', '#363e60', '#fa24bf', '#e21033'],
@@ -52,6 +91,27 @@ DRY_FIT: {
     largura: '1,75m', rendimento: '5,43m/kg', gramatura: '119g/m²', composicao: '96% Poliamida, 4% Elastano',
     attributes: ['25.ESPORTIVO.jpg','02.PRAIA2.jpg','25.LAZER.jpg','11.RESPIRABILIDADE.jpg'],
     bookUrl: 'book.html?fabric=DRY_FIT',
+  },
+
+  DRY_FIT_LISTRADO: {
+    name: 'Dry Fit Listrado', category: 'LISOS', tag: 'Fitness · Esportivo',
+    previewColors: ['#d7f57f', '#4175ba', '#FFFFFF', '#6c757d', '#f33d58', '#f75828', '#363e60', '#fa24bf', '#e21033'],
+    desc: 'Tecido de malha de urdume, construção tule (mesh), composto por fios defilamentos de poliéster texturizado e por elastano, que confere ao produto um toque macio e confortável. A malha de urdume é caracterizada por sua estrutura aberta e leve, proporcionando excelente respirabilidade e ventilação. Ideal para peças de performance, como regatas, tops e recortes estratégicos, onde a ventilação é essencial para o conforto durante a prática de atividades físicas. FPU 50+ vitalício devido ao fio de poliéster ser enriquecido com dióxido de titânio em sua massa.',
+    pages: 1, colorsTitle: 'Variações',
+    colors:[
+      { name: 'Amarelo Lima', hex:'#d7f57f'},
+      { name: 'Azul Náutico', hex:'#4175ba'},
+      { name: 'Branco', hex: '#FFFFFF'},
+      { name: 'Cinza Chumbo', hex: '#6c757d'},
+      { name: 'Goiaba/Flamingo', hex: '#f33d58'},
+      { name: 'Laranja Neon', hex: '#f75828'},
+      { name: 'Marinho', hex: '#363e60'},
+      { name: 'Pink', hex: '#fa24bf'},
+      { name: 'Vermelho', hex: '#e21033'},
+    ],
+    largura: '1,75m', rendimento: '5,43m/kg', gramatura: '119g/m²', composicao: '96% Poliamida, 4% Elastano',
+    attributes: ['25.ESPORTIVO.jpg','02.PRAIA2.jpg','25.LAZER.jpg','11.RESPIRABILIDADE.jpg'],
+    bookUrl: 'book.html?fabric=DRY_FIT_LISTRADO',
   },
 
 DRY_SPORT: {
@@ -112,6 +172,19 @@ DRY_SPORT: {
     attributes: ['25.ESPORTIVO.jpg','02.PRAIA2.jpg','25.LAZER.jpg','11.RESPIRABILIDADE.jpg'],
     bookUrl: 'book.html?fabric=DRY_TECH',
   },
+
+  FLICKER_METALIZADO: {
+  name: 'Flicker Metalizado', category: 'LISOS', tag: '', 
+  previewColors: [],
+  desc: '', 
+  pages: '', colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+  largura: '', rendimento: '', gramatura: '', composicao: '', 
+  attributes: [],
+  bookUrl: 'book.htmlfabric=FLICKER_METALIZADO'
+},
 
   FORRO_COLMEIA: {
     name: 'Forro Colmeia', category: 'LISOS', tag: 'Forro', supplier: 'ROSSET',

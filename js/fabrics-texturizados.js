@@ -651,6 +651,23 @@ const FABRICS_TEXTURIZADOS = {
     ],
     largura: '1,32m', rendimento: '1,68m/kg', gramatura: '450g', composicao: '80% Poliamida, 20% Elastano',
     attributes: ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','19.ALTA-COBERTURA.jpg','05.TOQUE-MACIO.jpg','06.SOLAR.jpg'],
+    bookUrl: 'book.html?fabric=CROCHETE'
+  },
+
+  CROCHETE: {
+    name: 'Crochete Romantic', category: 'TEXTURIZADOS', tag: 'Moda Praia · Fitness · Casual',
+    previewColors: ['#D8C8A8', '#FFFFFF', '#151210', '#F0EBD8', '#db0000'],
+    desc: 'Com estrutura dupla e alta gramatura, a malha CROCHETE possui textura inspirada nos produtos artesanais, com aparência rústica e efeito de crochê produzido à mão. Em poliamida opaca com elastano, confere ao usuário conforto e muita maciez. Ideal para peças da moda praia, pode ser utilizado no segmento Fitness e em peças de moda casual.',
+    pages: 1, colorsTitle: 'Variações',
+    colors: [
+      { name: 'Bege/Branco', hex: [ '#D8C8A8', '#FFFFFF' ] },
+      { name: 'Bege/Preto', hex: [ '#D8C8A8', '#151210' ] },
+      { name: 'Off-White', hex: '#F0EBD8' },
+      { name: 'Vermelho', hex: '#db0000' },
+    ],
+    largura: '1,32m', rendimento: '1,68m/kg', gramatura: '450g', composicao: '80% Poliamida, 20% Elastano',
+    attributes: ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','19.ALTA-COBERTURA.jpg','05.TOQUE-MACIO.jpg','06.SOLAR.jpg'],
+    bookUrl: 'book.html?fabric=CROCHETE_ROMANTIC'
   },
 
   CRUNCH_LISTRADO: {
