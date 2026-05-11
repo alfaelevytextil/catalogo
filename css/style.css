@@ -159,8 +159,11 @@ nav{
 .fabric-overlay {
   position: absolute;
   inset: 0;
-  /* MUDANÇA: Gradiente escuro no topo (para o texto) e na base (para o botão) */
-  background: linear-gradient(to bottom, rgba(14,8,24,0.6) 0%, transparent 35%, transparent 65%, rgba(14,8,24,0.8) 100%) !important;
+  
+  /* MUDANÇA: Combinamos dois gradientes */
+  background: 
+  radial-gradient(circle, rgba(14, 8, 24, 0.5) 0%, transparent 75%), /* Aumentamos para 0.5 */
+  linear-gradient(to bottom, rgba(14, 8, 24, 0.6) 0%, transparent 35%, transparent 65%, rgba(14, 8, 24, 0.8) 100%) !important;
   transition: background 0.4s;
 }
 
@@ -209,28 +212,34 @@ nav{
 .fabric-card:hover .fabric-footer{transform:translateY();}
 
 .fabric-name {
-    font-family: 'Baskerville Old Face', serif;
-    font-size: 53px;
-    font-weight: 550;
-    color: white;
+  font-family: 'Baskerville Old Face', serif;
+  font-size: 53px;
+  font-weight: 550;
+  color: white;
+  text-align: center;
+  line-height: 1.1;
+  width: 100%;
+  max-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    text-align: center;
-    line-height: 1.1;
+  /* REMOVEMOS: Contornos, backgrounds, paddings e blurs que desconfiguraram */
+ 
+  /* ... fontes e posicionamento ... */
 
-    width: 100%;
-    max-width: 300px;
+ background: linear-gradient(to bottom, #ffffff 0%, #d4d4d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    text-shadow:
-        0 2px 4px rgba(0,0,0,0.9),
-        0 4px 12px rgba(0,0,0,0.8);
-
-    -webkit-text-stroke: 1px rgba(0,0,0,0.35);
+  /* 2. DROP-SHADOW DUPLO (O Segredo!) */
+  filter: 
+    drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9))    /* Contorno suave colado na letra */
+    drop-shadow(0 0 25px rgba(0, 0, 0, 0.7));   /* Nuvem escura que afasta o fundo */
 }
+
 
 .fabric-tag {
   font-size: 13px;
@@ -636,7 +645,7 @@ footer ul li a:hover{color:var(--cream);}
   .fabric-modal-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
   }
 
-@media(max-width:768px){
+@media(max-width:768px) {
   .fabrics-grid{grid-template-columns:repeat(2,1fr);gap:2px;}
   .fabric-card{aspect-ratio:3/4;}
   .fabric-info{
@@ -667,11 +676,7 @@ footer ul li a:hover{color:var(--cream);}
   }
 
   .fabric-tag{font-size:8px;letter-spacing:2px;margin-bottom:6px;}
-  .fabric-desc{
-    font-size:11px;line-height:1.5;
-    opacity:0.75 !important;
-    display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  }
+  
   .fabric-cta{
     font-size:8px;letter-spacing:2px;margin-top:8px;
     opacity:1 !important;transform:none !important;
