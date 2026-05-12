@@ -32,7 +32,7 @@ const FABRICS_TRAMAS = {
     name: 'Tela Fit Poliéster', category: 'TRAMAS', tag: 'Fitness · Esportivo',
     previewColors: ['#358bc9', '#ffff', '#2e3861', '#a42941'],
     desc: 'Tecido de malha de urdume, construção tule (mesh), composto por fios defilamentos de poliéster texturizado e por elastano, que confere ao produto um toque macio e confortável. A malha de urdume é caracterizada por sua estrutura aberta e leve, proporcionando excelente respirabilidade e ventilação. Ideal para peças de performance, como regatas, tops e recortes estratégicos, onde a ventilação é essencial para o conforto durante a prática de atividades físicas. FPU 50+ vitalício devido ao fio de poliéster ser enriquecido com dióxido de titânio em sua massa.',
-    pages: 8, colorsTitle: 'Variações',
+    pages: 1, colorsTitle: 'Variações',
     colors:[
       { name: 'Azul', hex:'#358bc9'},
       { name: 'Branco', hex:'#ffff'},
@@ -44,4 +44,31 @@ const FABRICS_TRAMAS = {
     attributes: ['25.ESPORTIVO.jpg','02.PRAIA2.jpg','25.LAZER.jpg','11.RESPIRABILIDADE.jpg'],
     bookUrl: 'book.html?fabric=TELA_FIT_POLIESTER',
   },
+
+  TELA_MESH: {
+    name: 'Tela Mesh', category: 'TRAMAS', tag: 'Fitness · Lingerie · Moda Praia', supplier: 'ROSSET',
+    desc: 'Tule elástico leve, bi-way, visual opaco e bom rendimento. Indicado para o segmento de lingerie linha dia e noite. Na moda praia pode ser explorado em peças fluídas pelo seu bom caimento. Em peças esportivas pode ser usado em detalhes e sobreposições que não exijam performance da peça.',
+    pages: 1, colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+
+  largura: '1,63m', rendimento: '8,81m/kg', gramatura: '75g/m²', composicao: 'Poliamida 95%, Elastano 5%',
+  attributes: ['01.FITNESS.jpg','10.LINGERIE.jpg','02.PRAIA2.jpg','20.CAIMENTO.jpg','13.ELASTICIDADE1.jpg','11.RESPIRABILIDADE.jpg','05.TOQUE-MACIO.jpg'],
+  bookUrl: 'book.html?fabric=TELA_MESH',
+  },
+
+  TULE_SUPER_LEVE: {
+    name: 'Tule Super Leve', category: 'TRAMAS', tag: 'Lingerie · Moda Praia', supplier: 'ROSSET',
+    desc: 'Tule leve com super caimento, e elasticidade acertada para compor peças de linha dia ajustadas ao corpo, como também para peças fluídas no segmento de linha noite. Seduz pelo brilho iridescente valoriza as cores, inclusive na versão estampada.',
+    pages: 1, colorsTitle: 'Cores Disponíveis',
+    colors: [
+
+    ],
+
+    largura: '1,47m', rendimento: '13,61m/kg', gramatura: ' 50g/m²', composicao: 'Poliamida 83%, Elastano 17%',
+    attributes: ['10.LINGERIE.jpg','02.PRAIA2.jpg','14.BRILHANTE.jpg','20.CAIMENTO.jpg','13.ELASTICIDADE1.jpg'],
+    bookUrl: 'book,html?fabric=TULE_SUPER_LEVE',
+  },
+
 };

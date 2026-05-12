@@ -2,9 +2,9 @@
 const FABRICS_LISOS = {
 
 ATLETIKA: {
-    name: 'Atletika', category: 'LISOS', tag: '', supplier: 'ROSSET',
+    name: 'Atletika', category: 'LISOS', tag: 'Fitness · Lingerie', supplier: 'ROSSET',
     previewColors: ['#e298ae', '#111532', '#887655fa',  '#008f7f', '#384c67'],
-    desc: '',
+    desc: 'Base em microfibra de superfície brilhante perolada. De composição bi-elástica, comprime de forma ajustada, ou seja, somente onde é exigida essa função. Oferece compressão muscular perfeita, diminuindo as vibrações e as tensões musculares, melhorando o desempenho atlético. Indicado também para o segmento de shapewear, combinando funcionalidade e estilo.',
     pages: 1, colorsTitle: 'Cores Disponíveis',
     colors: [
      { name: '3983 Blossom', hex: '#e298ae' },
@@ -21,11 +21,10 @@ ATLETIKA: {
      { name: '8187 Milkshake', hex: '#e06eac' },
      { name: '0500 Preto', hex: '#000000' },
      { name: '8170 Sálvia', hex: '#50826f' },
-
-
     ],
-    largura: '', rendimento: '', gramatura: '', composicao: '',
-    attributes: [],
+
+    largura: '1,48m', rendimento: '2,82m/kg', gramatura: ' 240g/m²', composicao: 'Poliamida 73%, Elastano 27%',
+    attributes: ['01.FITNESS.jpg','10.LINGERIE.jpg','13.ELASTICIDADE1.jpg','15.KETTENSPORT.jpg','8.SHARPEWAR.jpg','05.TOQUE-MACIO.jpg'],
     bookUrl: 'book.html?fabric=ATLETIKA'
   },
 
@@ -196,9 +195,12 @@ DRY_SPORT: {
   name: 'Flicker Metalizado', category: 'LISOS', tag: '', 
   previewColors: [],
   desc: '', 
-  pages: '', colorsTitle: 'Cores Disponíveis',
+  pages: 1, colorsTitle: 'Cores Disponíveis',
   colors: [
-
+      { name: 'Ferrugo', hex: '#b94c0b' },
+      { name: 'Marrom Café', hex: '#6B4A3A' },
+      { name: 'Royal', hex: '#2744db'},
+      { name: 'Spoonbill', hex: '#d9abb5' },
   ],
   largura: '', rendimento: '', gramatura: '', composicao: '', 
   attributes: [],
@@ -288,9 +290,9 @@ SANTA_CONSTANCIA: {
   },
  
   LUNA: {
-    name: 'Luna', category: 'LISOS', tag: 'Moda Praia · Moda Casual', supplier: 'ROSSET',
+    name: 'Luna', category: 'LISOS', tag: 'Fitness · Lingerie · Moda Casual · Moda Praia ', supplier: 'ROSSET',
     previewColors: ['#7FB8AD', '#719273', '#e4ac74', '#a47b67', '#66bfb5', '#04839b', '#d4c2bc', '#492026', '#bb4f8c', '#ea88b1', '#e298ae', '#3c5577', '#354335', '#ffffff', '#5b8643', '#72142a'],
-    desc: 'Malha de poliamida opaca com elastano, a Luna é a escolha perfeita para quem busca conforto e estilo em peças de moda praia e casual. Com toque macio e excelente elasticidade, oferece um caimento fluido e confortável, ideal para saídas de praia, vestidos e peças casuais. Sua composição garante durabilidade e resistência, mantendo a qualidade mesmo após várias lavagens. Disponível em uma variedade de cores vibrantes e neutras, a Luna é versátil para diversas criações.',
+    desc: 'Desenvolvido com a microfibra de poliamida, o artigo proporciona toque agradável e conforto em contato com a pele. Homologado com proteção U.V, o tecido tem visual opaco, é leve e com elasticidade acertada. O Luna é um artigo bem versátil, podendo ser usado em diferentes segmentos. Confere um tecido equilibrado e com ótimo rendimento, ideal para a produção de lingerie dia, moda praia e camisetas de manga longa para atividades físicas e lazer prolongados ao ar livre.',
     pages: 1, colorsTitle: 'Cores Disponíveis',
     colors: [
       { name: '5108 Acalanto',         hex: '#7FB8AD' },
@@ -392,17 +394,17 @@ SANTA_CONSTANCIA: {
       { name: '2303 Viena',      hex: '#773645' },
       { name: '1343 Zig Zag',     hex: '#f09189' },
     ],
-    largura: '1,60m', rendimento: '4,57m/kg', gramatura: '135g/m²', composicao: '91% Poliamida, 9% Elastano',
-    attributes: ['02.PRAIA2.jpg','04.MODA.jpg','05.TOQUE-MACIO.jpg','13.ELASTICIDADE1.jpg'],
+    largura: '1,48 m', rendimento: '4,22 m/kg', gramatura: '160g/m²', composicao: '88,6% Poliamida, 11,4% Elastano',
+    attributes: ['01.FITNESS.jpg','10.LINGERIE.jpg','04.MODA.jpg','02.PRAIA2.jpg','23.ALTO-RENDIMENTO.jpg','12.CONFORTO-TERMICO.jpg','06.SOLAR.jpg'],
     bookUrl: 'book.html?fabric=LUNA',
   },
 
  
 
   LYCRA_5058: {
-    name: 'Lycra 5058 Praia Opaco', category: 'LISOS', tag: 'Moda Praia · Moda Casual', supplier: 'ROSSET',
+    name: 'Lycra 5058 Praia Opaco', category: 'LISOS', tag: 'Moda Praia', supplier: 'ROSSET',
     previewColors: ['#FFFFFF', '#000000', '#0f1c2e', '#111532', '#534d50', '#bb1a20', '#801726', '#a36648', '#e4407e', '#621887'],
-    desc: 'Malha de poliamida opaca com elastano, a Lycra 5058 é a escolha perfeita para quem busca conforto e estilo em peças de moda praia e casual. Com toque macio e excelente elasticidade, oferece um caimento fluido e confortável, ideal para saídas de praia, vestidos e peças casuais. Sua composição garante durabilidade e resistência, mantendo a qualidade mesmo após várias lavagens. Disponível em uma variedade de cores vibrantes e neutras, a Lycra 5058 é versátil para diversas criações.',
+    desc: 'Produto clássico para linha praia desenvolvido em poliamida aliado ao conforto do elastano. Pensado para linha de comodities, reúne um conjunto de estratégias para torná-lo uma ótima opção do segmento, em determinadas peças pode ser utilizado sem forro. Sua gramatura o torna encorpado e com ajuste perfeito ao corpo.',
     pages: 1, colorsTitle: 'Cores Disponíveis',
     colors: [
       { name: 'Cor G1: 0001 Branco',  hex: '#FFFFFF' },   
@@ -416,15 +418,15 @@ SANTA_CONSTANCIA: {
       { name: 'Cor G2: 7988 Euforia', hex: '#e4407e' },
       { name: 'Cor G2: 3741 Fuchisia', hex: '#621887' },
     ],
-    largura: '1,60m', rendimento: '4,57m/kg', gramatura: '135g/m²', composicao: '91% Poliamida, 9% Elastano',
-    attributes: ['02.PRAIA2.jpg','04.MODA.jpg','05.TOQUE-MACIO.jpg','13.ELASTICIDADE1.jpg'],
+    largura: '1,43m', rendimento: '2,98m/kg', gramatura: '235g/m²', composicao: '85% Poliamida, 15% Elastano',
+    attributes: ['02.PRAIA2.jpg','13.ELASTICIDADE1.jpg','06.TOQUE-GELADO.jpg'],
     bookUrl: 'book.html?fabric=LYCRA_5058',
   },
 
   LYCRA_5371: {
-    name: 'Lycra 5371 Beach', category: 'LISOS', tag: 'Moda Praia · Moda Casual', supplier: 'ROSSET',
+    name: 'Lycra 5371 Beach', category: 'LISOS', tag: 'Fitness · Moda Casual · Moda Praia ', supplier: 'ROSSET',
     previewColors: ['#27374e', '#3c5577', '#182957', '#3848a0', '#5d82a0', '#87CEEB', '#77b8c9', '#606693', '#4a476d', '#2a2446', '#3e2f50', '#1bacb5', '#492026', '#932e68', '#808484', '#424f3c', '#4c4938', '#378764', '#89052f', '#e42a67', '#e77dc5', '#d9b6c4', '#ff4d80', '#f09189', '#5b3325', '#ac2e27', '#ae4c21', '#e25b26', '#f3554c', '#f29e73', '#cebb45', '#baa49d', '#eae4d3', '#f7c874', '#e6df51', '#b8f2a5', '#a47ee0'],
-    desc: 'Malha de poliamida opaca com elastano, a Lycra 5371 é a escolha perfeita para quem busca conforto e estilo em peças de moda praia e casual. Com toque macio e excelente elasticidade, oferece um caimento fluido e confortável, ideal para saídas de praia, vestidos e peças casuais. Sua composição garante durabilidade e resistência, mantendo a qualidade mesmo após várias lavagens. Disponível em uma variedade de cores vibrantes e neutras, a Lycra 5371 é versátil para diversas criações.',
+    desc: 'Clássico consolidado na moda praia, esse artigo tem estabilidade dimensional, conforto, power e toque macio. Extremamente resistente não deforma, é durável por se tratar de um tecido de Ketten. Indicado também para peças do segmento esportivo que exijam conforto e média compressão.',
     pages: 1, colorsTitle: 'Cores Disponíveis',
     colors: [
       { name: 'Cor G1: 0396 Shark',  hex: '#27374e' },
@@ -471,13 +473,13 @@ SANTA_CONSTANCIA: {
       { name: 'Cor G3: 2215 Bikini', hex: '#e923b4' },
       { name: 'Cor G3: 3900 Folia', hex: '#ee0b1e' },
     ],
-    largura: '1,60m', rendimento: '4,57m/kg', gramatura: '135g/m²', composicao: '91% Poliamida, 9% Elastano',
-    attributes: ['02.PRAIA2.jpg','04.MODA.jpg','05.TOQUE-MACIO.jpg','13.ELASTICIDADE1.jpg'],
+    largura: '1,43m', rendimento: '2,98m/kg', gramatura: '235g/m²', composicao: '85% Poliamida, 15% Elastano',
+    attributes: ['01.FITNESS.jpg','04.MODA.jpg','02.PRAIA2.jpg','13.ELASTICIDADE1.jpg','06.TOQUE-GELADO.jpg'],
     bookUrl: 'book.html?fabric=LYCRA_5371',
   },
 
    NEW_TRIP: {
-    name: 'New Trip', category: 'LISOS', tag: 'Fitness · Moda Casual', supplier: 'ROSSET',
+    name: 'New Trip', category: 'LISOS', tag: 'Fitness', supplier: 'ROSSET',
     previewColors: ['#7FB8AD', '#719273', '#66bfb5', '#04839b', '#492026', '#bb4f8c', '#354335', '#ffffff', '#5b3325', '#b5a186', '#bb1a20', '#ccda78', '#a36648', '#424f3c', '#89052f', '#40d68f', '#ff104f', '#f29e73', '#e4407e', '#a4f21c', '#2c4726', '#b1f5e0', '#7d336b', '#23503e', '#384c67', '#808484', '#519198', '#a47ee0', '#0f1c2e', '#c38db7', '#77b8c9', '#3e649a', '#4a476d', '#707e9b', '#378764', '#f7c874', '#000000'],
     desc: 'Parceiro ideal para todos os esportes, o artigo confere textura suave e foi desenvolvido com a microfibra de poliamida juntamente com um fio ultrafino, que é responsável pela formação dos microporos. Tem excelente respirabilidade que ajuda na evaporação natural da transpiração, deixando a pele seca e fresca durante os exercícios. É um artigo de rápida secagem e perfeito para a confecção de regatas e camisetas soltinhas, principalmente para os exercícios aeróbicos e de corridas.',
     pages: 1, colorsTitle: 'Cores Disponíveis',
@@ -539,28 +541,103 @@ SANTA_CONSTANCIA: {
 
   NEW_ZELAND: {
   name: 'New Zeland', category: 'LISOS', tag: '', supplier: 'ROSSET',
-  previewColors: [],
-  desc: '', 
+  previewColors: ['#5b3325','#ee0b1e','#eae4d3','#dc4e6b','#415a7a'],
+  desc: 'Com toque suave e super confortável, o tecido segue cada movimento do corpo com facilidade. Desenvolvido com a microfibra de poliamida juntamente com a força do elastano, o artigo exerce ótima compressão sobre a musculatura, confere elasticidade e power adequados para valorizar a silhueta sem apertar ou causar desconforto. Ideal para a confecção de peças esportivas como leggings, bermudas e tops, assim como roupas confortáveis para o lazer.', 
   pages: '', colorsTitle: 'Cores Disponíveis',
   colors: [
-
+    { name: '9161 Esmeralda', hex: '#243a45' },
+    { name: '7968 Foliage', hex: '#2c4726' },
+    { name: '5421 Croco', hex: '#424f3c' },
+    { name: '5800 Cappuccino', hex: '#5b3325' },
+    { name: '6285 Coffee', hex: '#291d03' },
+    { name: '0500 Preto', hex: '#000000' },
+    { name: '4975 Hortênsia', hex: '#606693' },
+    { name: '0331 Blue Jeans', hex: '#3c5577'},
+    { name: '6240 Tâmisa', hex: '#415a7a' },
+    { name: '4493 Marinho', hex: '#0f1c2e' },
+    { name: '6811 Carbox', hex: '#464a4d' },
+    { name: '0494 Gris', hex: '#808484' },
+    { name: '8918 Deluxe', hex: '#44192f' },
+    { name: '3950 Carmim', hex: '#72142a' },
+    { name: '1948 Divino', hex: '#801726' },
+    { name: '2319 Magenta', hex: '#dd1750' },
+    { name: '8340 Off-White', hex: '#eae4d3' },
+    { name: '0001 Branco', hex: '#ffffff' },
+    { name: '4325 Vert', hex: '#53b75c' },
+    { name: '3900 Folia', hex: '#ee0b1e' },
+    { name: '2883 Astral', hex: '#8b559b' },
+    { name: '3496 Atol', hex: '#04839b' },
+    { name: '3721 Bliss', hex: '#ea88b1' },
+    { name: '3500 Pink Pop', hex: '#dc4e6b' },
   ],
-  largura: '', rendimento: '', gramatura: '', composicao: '', 
-  attributes: [],
+
+  largura: '163m', rendimento: '1,68m/kg', gramatura: '365g/m²', composicao: 'Poliamida 88%, Elastano: 12%', 
+  attributes: ['01.FITNESS.jpg','16.COMPRESSAO.jpg','12.CONFORTO-TERMICO.jpg','06.SOLAR.jpg','05.TOQUE-MACIO.jpg'],
   bookUrl: 'book.htmlfabric=NEW_ZELAND'
 },
 
  NAKAY: {
-  name: 'Nakay', category: 'LISOS', tag: '', supplier: 'ROSSET',
-  previewColors: [],
+  name: 'Nakay', category: 'LISOS', tag: '', supplier: 'ROSSET', supplier: 'ROSSET',
+  previewColors: ['#804335', '#1c3b7b', '#89052f', '#c38db7', '#d06a4f'],
   desc: '', 
   pages: '', colorsTitle: 'Cores Disponíveis',
   colors: [
-
+        { name: '3188 Bronze', hex: '#804335'},
+        { name: '2303 Viena', hex: '#773645'},
+        { name: '3715 Gaia', hex: '#932e68'},
+        { name: '0331 Blue Jeans', hex: '#3c5577'},
+        { name: '8275 Oceano', hex: '#3848a0' },
+        { name: '0586 Alenxadria', hex: '#1c3b7b' },
+        { name: '8170 Sálvia', hex: '#50826f' },
+        { name: '0320 Enseada', hex: '#1583e0' },
+        { name: '4112 Galáxia', hex: '#384c67' },
+        { name: '4423 Eclipse', hex: '#111532' },
+        { name: '8918 Deluxe', hex: '#44192f' },
+        { name: '6325 Melissa', hex: '#c38db7' },
+        { name: '4124 Índigo', hex: '#263567' },
+        { name: '6811 Carbox', hex: '#464a4d' },
+        { name: '3703 Mirante', hex: '#77b8c9' },
+        { name: '8187 Milkshake', hex: '#e06eac' },
+        { name: '3741 Fuchsia', hex: '#7d336b' },
+        { name: '8314 Menta', hex: '#b8f2a5' },
+        { name: '3489 Terracota', hex: '#d06a4f' },
+        { name: '3950 Carmim', hex: '#72142a' },
+        { name: '3621 Cítrus', hex: '#ccda78' },
+        { name: '0569 Oliva', hex: '#b7cd9b' },
+        { name: '5170 Drink', hex: '#40d68f' },
+        { name: '8457 Desejo', hex: '#89052f' },
   ],
   largura: '', rendimento: '', gramatura: '', composicao: '', 
   attributes: [],
   bookUrl: 'book.htmlfabric=NAKAY'
+},
+
+MICROFIBRA_JERSINYL: {
+  name: 'Microfibra Jersinyl', category: 'LISOS', tag: 'Lingerie · Moda Praia', supplier: 'ROSSET',
+  previewColors: ['','','','',''],
+  desc: 'Tecido desenvolvido em microfibra com visual levemente brilhante, adere a pele com maciez e suave compressão.',
+  pages: 1, colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+
+  largura: '153m', rendimento: '3,11m/kg', gramatura: '210g/m²', composicao: 'Poliamida: 84%, Elastano: 16%',
+  attributes: ['10.LINGERIE.jpg','02.PRAIA2.jpg','13.ELASTICIDADE1.jpg','06.TOQUE-GELADO.jpg','05.TOQUE-MACIO.jpg'],
+  bookUrl: 'book.html?fabric=MICROFIBRA_JERSINYL',
+},
+
+NAGOYA: {
+  name: 'Nagoya', category: 'LISOS', tag: 'Fitness · Moda Praia', supplier : 'ROSSET',
+previewColors: ['', '', '', '', ''],
+desc: 'Em uma base opaca, o artigo Nagoya oferece não apenas uma excelente elasticidade, mas também alta cobertura garantindo peças com menor transparência. Uma escolha ideal para quem busca conforto, estilo e desempenho em roupas esportivas e de moda. Sua composição cuidadosamente elaborada proporciona sensação agradável ao toque, oferece suporte e liberdade de movimento durante as atividades físicas e para as mais diversas peças do segmento de moda.',
+pages: 1, colorsTitle: 'Cores Disponíveis',
+colors: [
+
+],
+
+largura: '165m', rendimento: ' 2,24 m/kg', gramatura: '270 g/m²', composicao: 'Poliamida 88%, Elastano 12%',
+attributes: ['01.FITNESS.jpg','02.PRAIA2.jpg','19.ALTA-COBERTURA.jpg','13.ELASTICIDADE1.jpg','06.SOLAR.jpg','05.TOQUE-MACIO.jpg'],
+bookUrl: 'book.html?fabric=NAGOYA',
 },
 
  SATURNO: {
@@ -647,18 +724,59 @@ SANTA_CONSTANCIA: {
   desc: '', 
   pages: '', colorsTitle: 'Cores Disponíveis',
   colors: [
-
+    { name: 'Couro', hex: '#ab7063' },
+    { name: 'Cocoa', hex: '#e5926a' },
+    { name: 'Páprica', hex: '#a13c34' },
+    { name: 'Urban', hex: '#061112' },
+    { name: 'Frapê', hex: '#ae804e'},
+    { name: 'Folk', hex: '#ee6951' },
+    { name: 'Elite', hex: '#323d2a' },
+    { name: 'Cacto', hex: '#3a5335' },
+    { name: 'Picolé', hex: '#70c6bb' },
+    { name: 'Garden', hex: '#175955' },
+    { name: 'Valley', hex: '#c0d023' },
+    { name: 'Spirit', hex: '#4f4a9a' },,
+    { name: 'Confete', hex: '#ec7496' },
+    { name: 'Peach Fuzz', hex: '#e6b37e' },
+    { name: 'Light Pink', hex: '#f0d0e4' },
+    { name: 'Butter', hex: '#e9e5a0' },
+    { name: 'Lily', hex: '#c9b0a2' },
+    { name: 'Organic', hex: ' #faffe4' },
+    { name: 'Ruby Wine', hex: '#60313f' },
+    { name: 'Jade', hex: '#096e77' },
+    { name: 'Elixir', hex: '#094764' },
+    { name: 'Malbec', hex: '#2c041e' },
+    { name: 'Petúnia', hex: '#171830' },
+    { name: 'Chocolates', hex: '#76664e' }, 
+    { name: 'Boheme', hex: '#52031b' },
+    { name: 'Dark Night', hex: '#090b1d' },
+    { name: 'Marinho', hex: '#0c2557' },
+    { name: 'Palace Blue', hex: '#1a2a78' },
+    { name: 'Pacific', hex: '#3293bd' }, 
+    { name: 'Fly', hex: '#86a7d4' },
+    { name: 'Nômade', hex: '#9c9579' },
+    { name: 'Preto', hex: '#040404' },
+    { name: 'Grafite', hex: '#353a39' },
+    { name: 'Glitter', hex: '#9c9c9c' },
+    { name: 'Branco', hex: '#ffffff' },
+    { name: 'Apple', hex: '#cb0428' },
+    { name: 'Dopamine', hex: '#ffaa86' },
+    { name: 'Kiwi', hex: '#72f75e' },
+    { name: 'Apperol', hex: '#d1641b' },
+    { name: 'Jubilee', hex: '#fa1e95' },
+    { name: 'Tonic', hex: '#862181' },
   ],
+
   largura: '', rendimento: '', gramatura: '', composicao: '', 
   attributes: [],
   bookUrl: 'book.htmlfabric=SUPLEX_POWER'
 },
 
 TRILOBAL_BEACH: {
-  name: 'Trilobal Beach', category: 'LISOS', tag: '', supplier: 'ROSSET',
+  name: 'Trilobal Beach', category: 'LISOS', tag: 'Fitness · Lingerie · Moda Casual · Moda Praia', supplier: 'ROSSET',
   previewColors: ['#492026', '#c5222c', '#2a408f', '#1cb1c6', '#bb4f8c'],
-  desc: '', 
-  pages: '', colorsTitle: 'Cores Disponíveis',
+  desc: 'Composto por poliamida brilhante trilobal, o artigo tem visual sofisticado de brilho iridescente. Com elasticidade em ambos os sentidos (Biway), alonga sem deformar.', 
+  pages: 1, colorsTitle: 'Cores Disponíveis',
   colors: [
   { name: '3980 Areia', hex: '#e4ac74' },
   { name: '7917 Argila', hex: '#c86656' },
@@ -765,9 +883,22 @@ TRILOBAL_BEACH: {
   { name: '1343 Zig Zag', hex: '#f09189' },
 
   ],
-  largura: '', rendimento: '', gramatura: '', composicao: '', 
-  attributes: [],
+  largura: '1,55M', rendimento: '3,15m/kg', gramatura: '205g/m²', composicao: 'Poliamida 85%, Elastano 15%', 
+  attributes: ['01.FITNESS.jpg','10.LINGERIE.jpg','04.MODA.jpg','02.PRAIA2.jpg','14.BRILHANTE.jpg','13.ELASTICIDADE1.jpg','06.SOLAR.jpg'],
   bookUrl: 'book.htmlfabric=TRILOBAL_BEACH'
+},
+
+TRILOBAL_FIT: {
+  name: 'Trilobal Fit', category: 'LISOS', tag: 'Fitness', supplier: 'ROSSET',
+  previewColors: [],
+  desc: 'Desenvolvido em fio brilhante trilobal, tem o peso e o power acertados para uma peça de legging. Um artigo que nasceu para se tornar uma das bases comodities com brilho do fitness para peças que precisam de uma certa compressão para se ajustar ao corpo com conforto e segurança.',
+  pages: 1, colorsTitle: 'Cores Disponíveis',
+  colors: [
+
+  ],
+  largura: '1,47m', rendimento: '2,78m/kg', gramatura: '245g/m²', composicao: 'Poliamida 87%, Elastano 13%',
+  attributes: ['01.FITNESS.jpg','14.BRILHANTE.jpg','13.ELASTICIDADE1.jpg','15.KETTENSPORT.jpg','06.SOLAR.jpg'],
+  bookUrl: 'book.html?fabric=TRILOBAL_FIT',
 },
 
 }
