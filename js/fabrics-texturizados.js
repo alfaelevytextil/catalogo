@@ -1318,7 +1318,7 @@ const FABRICS_TEXTURIZADOS = {
     ],
 
     largura: '1,16m', rendimento: '2,97m/kg', gramatura: '290g/m²', composicao: 'Poliamida 82%, Elastano 18%',
-    attributes: ['02.PRAIA2.jpg','20.CAIMENTO.jpg','13.ELASTICIDADE1.jpg','05,TOQUE-MACIO.jpg'],
+    attributes: ['02.PRAIA2.jpg','20.CAIMENTO.jpg','13.ELASTICIDADE1.jpg','05.TOQUE-MACIO.jpg'],
     bookUrl: 'book.html?fabric=MONACO'
   },
 

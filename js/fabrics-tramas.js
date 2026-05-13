@@ -58,6 +58,18 @@ const FABRICS_TRAMAS = {
   bookUrl: 'book.html?fabric=TELA_MESH',
   },
 
+  TULE_SLIM: {
+    name: 'Tule Slim', category: 'TRAMAS', tag: 'Fitness · Lingerie', supplier: 'ROSSET',
+    desc: 'Tule tecnológico, combina funcionalidade e diferenciação. Desenvolvido em microfibra, toque agradável, sustenta com leveza e sem exageros. Perfeito para ser combinado com cetinetes ou Jersey power. Compressão e elasticidade equilibradas, para funções específicas, ajudam na transpirabilidade.',
+  pages: 1, colorsTitle: 'Variações',
+  colors: [
+
+  ],
+  largura: '2,03m', rendimento: ' 3,18m/kg', gramatura: ' 155g/m²', composicao: 'Poliamida 67,20%, Elastano 32,80%',
+  attributes: ['01.FITNESS.jpg','10.LINGERIE.jpg','16.COMPRESSAO.jpg','13.ELASTICIDADE1.jpg','11.RESPIRABILIDADE.jpg','8.SHARPEWAR.jpg','05.TOQUE-MACIO.jpg'],
+  bookUrl: 'book.html?fabric=TULE_SLIM',
+  },
+
   TULE_SUPER_LEVE: {
     name: 'Tule Super Leve', category: 'TRAMAS', tag: 'Lingerie · Moda Praia', supplier: 'ROSSET',
     desc: 'Tule leve com super caimento, e elasticidade acertada para compor peças de linha dia ajustadas ao corpo, como também para peças fluídas no segmento de linha noite. Seduz pelo brilho iridescente valoriza as cores, inclusive na versão estampada.',

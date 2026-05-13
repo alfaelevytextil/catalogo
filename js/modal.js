@@ -6,7 +6,7 @@
    ► Fotos nos swatches mantidas apenas para ESTAMPADOS / variações
    ═══════════════════════════════════════════════════════════════ */
 
-const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg'];
+const USO_ICONS = ['01.FITNESS.jpg','02.PRAIA2.jpg','04.MODA.jpg','10.LINGERIE.jpg','25.ESPORTIVO.jpg','02.DRY.jpg','12.SEGUNDAPELE.jpg'];
 
 let currentLightboxImages = [];
 let currentLightboxIndex  = 0;
